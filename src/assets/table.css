@@ -1,0 +1,42 @@
+.table-tt{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: transparent;
+    display: table;
+}
+
+.tr-th{
+    color: inherit;
+    height: 56px;
+    display: table-row;
+    outline: none;
+    vertical-align: middle;
+}
+
+.tr-th th{
+    padding: 12px 8px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.42857143;
+    vertical-align: middle;
+}       
+
+.tr-tbody{
+    color: inherit;
+    height: 48px;
+    display: table-row;
+    outline: none;
+    vertical-align: middle;
+}
+
+.tr-tbody td{
+    padding: 12px 8px;
+    font-size: 0.8125rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.42857143;
+    vertical-align: middle;
+}

@@ -1,0 +1,544 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .Cards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #333333;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 100px 50px;
+            padding: 100px 50px;
+        }
+
+        .container .custom-card {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 350px;
+            max-width: 100%;
+            height: 300px;
+            background: #FFF;
+            border-radius: 20px;
+            transition: 0.5s;
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .container .custom-card:hover {
+            height: 400px;
+        }
+
+        .container .custom-card .img-box {
+            position: absolute;
+            top: 20px;
+            width: 300px;
+            height: 220px;
+            background: #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .container .custom-card:hover .img-box {
+            top: -100px;
+            scale: 0.75;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .container .custom-card .img-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container .custom-card .custom-content {
+            position: absolute;
+            top: 252px;
+            width: 100%;
+            height: 35px;
+            padding: 0 30px;
+            text-align: center;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .container .custom-card:hover .custom-content {
+            top: 130px;
+            height: 250px;
+        }
+
+        .container .custom-card .custom-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .container .custom-card .custom-content p {
+            color: #333;
+        }
+
+        .container .custom-card .custom-content a {
+            position: relative;
+            top: 15px;
+            display: inline-block;
+            padding: 12px 25px;
+            text-decoration: none;
+            background: #181818;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .container .custom-card .custom-content a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 480px) {
+            .container .custom-card {
+                width: 230px;
+                border-radius: 15px;
+            }
+
+            .container .custom-card .img-box {
+                width: 185px;
+                border-radius: 10px;
+            }
+
+            .container .custom-card .custom-content p {
+                font-size: 0.8rem;
+            }
+
+            .container .custom-card .custom-content a {
+                font-size: 0.9rem;
+            }
+        } */
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+
+.container .custom-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+    background: #FFF;
+    border-radius: 20px;
+    transition: 1.5s;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+.container .custom-card:hover {
+    height: 400px;
+    width: 500px;
+}
+
+.container .custom-card .img-box {
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 1.5s;
+}
+
+.container .custom-card:hover .img-box {
+    top: -100px;
+    transform: translateX(-180px);
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.container .custom-card .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .custom-card .custom-content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 1.5s;
+}
+
+.container .custom-card:hover .custom-content {
+    top: 130px;
+    height: 250px;
+}
+
+.container .custom-card .custom-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333333;
+}
+
+.container .custom-card .custom-content p {
+    color: #333;
+}
+
+.container .custom-card .custom-content a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    background: #181818;
+    color: #fff;
+    font-weight: 500;
+}
+
+.container .custom-card .custom-content a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .container .custom-card {
+        width: 230px;
+        border-radius: 15px;
+    }
+
+    .container .custom-card .img-box {
+        width: 185px;
+        border-radius: 10px;
+    }
+
+    .container .custom-card .custom-content p {
+        font-size: 0.8rem;
+    }
+
+    .container .custom-card .custom-content a {
+        font-size: 0.9rem;
+    }
+} */
+
+
+
+/* this css was good */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* .Cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #333333;
+} */
+
+.ccccontainer {
+    position: relative;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    flex-wrap: wrap;
+    gap: 50px 20px;
+    
+    /* padding: 100px 50px; */
+}
+
+.ccccontainer .custom-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 295px;
+    max-width: 100%;
+    height: 300px;
+    background: #FFF;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* .ccccontainer .custom-card:hover {
+    height: 400px;
+} */
+.ccccontainer .custom-card:hover {
+    height: 400px;
+}
+
+.ccccontainer .custom-card .img-box {
+    position: absolute;
+    top: 20px;
+    width: 250px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.ccccontainer .custom-card:hover .img-box {
+    top: -80px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.ccccontainer .custom-card .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ccccontainer .custom-card .custom-content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.ccccontainer .custom-card:hover .custom-content {
+    top: 130px;
+    height: 250px;
+}
+
+.ccccontainer .custom-card .custom-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333333;
+}
+
+.ccccontainer .custom-card .custom-content p {
+    color: #333;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ccccontainer .custom-card:hover .custom-content p {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ccccontainer .custom-card:hover .custom-content p:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.ccccontainer .custom-card:hover .custom-content p:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.ccccontainer .custom-card:hover .custom-content p:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.ccccontainer .custom-card:hover .custom-content p:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.ccccontainer .custom-card .custom-content a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    background: #181818;
+    color: #fff;
+    font-weight: 500;
+}
+
+.ccccontainer .custom-card .custom-content a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .ccccontainer .custom-card {
+        width: 230px;
+        border-radius: 15px;
+    }
+
+    .ccccontainer .custom-card .img-box {
+        width: 185px;
+        border-radius: 10px;
+    }
+
+    .ccccontainer .custom-card .custom-content p {
+        font-size: 0.8rem;
+    }
+
+    .ccccontainer .custom-card .custom-content a {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+/* for plan card ///////////////////////////////////////////////////////////*/
+
+.ccccontainer .custom-cardd:hover {
+    height: 330px;
+}
+
+.ccccontainer .custom-cardd .img-box {
+    position: absolute;
+    top: 20px;
+    width: 250px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.ccccontainer .custom-cardd:hover .img-box {
+    top: -80px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.ccccontainer .custom-cardd .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ccccontainer .custom-cardd .custom-content {
+    position: absolute;
+    top: 252px;
+    width: 100%;
+    height: 35px;
+    padding: 0 30px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.ccccontainer .custom-cardd:hover .custom-content {
+    top: 130px;
+    height: 250px;
+}
+
+.ccccontainer .custom-cardd .custom-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333333;
+}
+
+.ccccontainer .custom-cardd .custom-content p {
+    color: #333;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ccccontainer .custom-cardd:hover .custom-content p {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ccccontainer .custom-cardd:hover .custom-content p:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.ccccontainer .custom-cardd:hover .custom-content p:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.ccccontainer .custom-cardd:hover .custom-content p:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.ccccontainer .custom-cardd:hover .custom-content p:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.ccccontainer .custom-cardd .custom-content a {
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    background: #181818;
+    color: #fff;
+    font-weight: 500;
+}
+
+.ccccontainer .custom-cardd .custom-content a:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+    .ccccontainer .custom-cardd {
+        width: 230px;
+        border-radius: 15px;
+    }
+
+    .ccccontainer .custom-cardd .img-box {
+        width: 185px;
+        border-radius: 10px;
+    }
+
+    .ccccontainer .custom-cardd .custom-content p {
+        font-size: 0.8rem;
+    }
+
+    .ccccontainer .custom-cardd .custom-content a {
+        font-size: 0.9rem;
+    }
+}
