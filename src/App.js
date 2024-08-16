@@ -148,6 +148,7 @@ import './assets/DeleteButton.css'
 import './assets/DropDown.css'
 import './assets/card.css'
 import './assets/BillsCard.css'
+import './assets/ProductCard.css'
 import ExercisesPlan from './components/Coach/ExercisesPlan';
 import Exercises from './pages/Exercises';
 import Bills from './pages/Bills';

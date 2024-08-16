@@ -16,6 +16,7 @@ import AddMeal from '../components/ADD/AddMeal'
 import { Toaster } from 'react-hot-toast'
 import { useAllIngredientsData } from '../hook/useAllIngredientsData'
 import { useAllMealsData } from '../hook/useAllMealsData'
+import { useDeleteMeal } from '../hook/useDeleteMeal'
 
 const Meal = () => {
     const images = [
@@ -25,12 +26,18 @@ const Meal = () => {
         { id: 4, img: sEgg },
     ]
 
+    const { mutate: deleteMeal } = useDeleteMeal()
+
+    const handleDelete = (mealID) => {
+        deleteMeal(mealID);
+    };
+
     // All ingredients
     const { data: allIngredients } = useAllIngredientsData()
     // console.log(allIngredients)
 
     //All Meals
-    const {data : AllMeals , error , isError} = useAllMealsData()
+    const { data: AllMeals, error, isError } = useAllMealsData()
     if (isError) {
         console.log(error.message)
         return <div>Error: {error.message}</div>
@@ -105,42 +112,46 @@ const Meal = () => {
                     {/*  */}
                     {AllMeals?.data?.map((meal) => {
                         return <>
-                        <div key={meal.id} className="bg-black border-1 border-black min-h-56 w-64 overflow-hidden rounded-xl m-5 card-effect">
-                            <div className="">
-                                <img className='w-full h-52' src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${meal.image}`} alt="Minecraft" />
-                            </div>
-                            <div className="p-4">
-                                <strong className="flex justify-between font-extrabold mt-3">
-                                    <span className='text-white '>
-                                        {meal.name}
-                                    </span>
-                                    <a href="#" className="no-underline text-blue-600">
-                                        <Delete className='text-red-500' />
-                                    </a>
-                                </strong>
-                            </div>
-                            <div className='grid grid-cols-2 '>
-                                <div className='border-r-1 text-white flex flex-col justify-center items-center'>
-                                    <p>calories: {meal.calories}</p>
-                                    <p className='mt-2'>Protien: {meal.protein}</p>
-                                    <p className='mt-2'>Sugar: {meal.sugar}</p>
+                            <div key={meal.id} className="bg-black border-1 border-black min-h-56 w-64 overflow-hidden rounded-xl m-5 card-effect">
+                                <div className="">
+                                    <img className='w-full h-52' src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${meal.image}`} alt="Minecraft" />
+                                </div>
+                                <div className="p-4">
+                                    <strong className="flex justify-between font-extrabold mt-3">
+                                        <span className='text-white '>
+                                            {meal.id} - {meal.name}
+                                        </span>
+                                        <a href="#MealDelete" className="no-underline text-blue-600"
+                                            // onClick={() => console.log(`Meal ID: ${exercise.id}`)}
+                                            onClick={() => handleDelete(meal.id)}  // Call handleDelete with exercise.id
 
+                                        >
+                                            <Delete className='text-red-500' />
+                                        </a>
+                                    </strong>
                                 </div>
-                                <div className='text-white ml-1 '>
-                                    <p className='flex'>ingredient: </p>
-                                    <div className='flex flex-wrap max-h-14 overflow-hidden'>
-                                        {meal.ingredients.map((imag) => {
-                                            return (
-                                                <>
-                                                    <img src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
-                                                </>
-                                            )
-                                        })}
+                                <div className='grid grid-cols-2 '>
+                                    <div className='border-r-1 text-white flex flex-col justify-center items-center'>
+                                        <p>calories: {meal.calories}</p>
+                                        <p className='mt-2'>Protien: {meal.protein}</p>
+                                        <p className='mt-2'>Sugar: {meal.sugar}</p>
+
                                     </div>
-                                    <p className='my-2 flex justify-center items-center'>salt: {meal.salt}</p>
+                                    <div className='text-white ml-1 '>
+                                        <p className='flex'>ingredient: </p>
+                                        <div className='flex flex-wrap max-h-14 overflow-hidden'>
+                                            {meal.ingredients.map((imag) => {
+                                                return (
+                                                    <>
+                                                        <img src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
+                                                    </>
+                                                )
+                                            })}
+                                        </div>
+                                        <p className='my-2 flex justify-center items-center'>salt: {meal.salt}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </>
                     })}
                     {/*  */}

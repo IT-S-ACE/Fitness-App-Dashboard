@@ -174,9 +174,12 @@ import { useAllProductData } from '../hook/useAllProductData';
 import Modal from '../components/Modal';
 import { BiPlus } from 'react-icons/bi';
 import AddProduct from '../components/ADD/AddProduct';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import AddProductDialog from '../components/AddProductDialog';
 import AddCoachDialog from '../components/AddCoachDialog';
+import { useMutation, useQueryClient } from 'react-query';
+import { DeleteProduct } from '../api/api';
+import ProductCard from '../components/ProductCard';
 
 const statusOptions = [
   { text: 'All', value: 'All' },
@@ -216,6 +219,33 @@ function Orders() {
       setProductData(transformProductData(allProducts.data));
     }
   }, [allProducts]);
+
+
+//   const deleteCustomer = async (customerId) => {
+//   await axios.delete(`https://api.example.com/customers/${customerId}`);
+// };
+
+
+  const queryClient = useQueryClient()
+  const deleteMutation = useMutation(DeleteProduct, {
+  onSuccess: (data) => {
+    console.log(data)
+    queryClient.invalidateQueries(['all-product']);
+    toast.success('deleted')
+  },onError: (err) => {
+    console.log(err.message)
+  }
+});
+const handleActionBegin = (args) => {
+  if (args.requestType === 'delete') {
+    const deletedRecords = args.data;
+    deletedRecords.forEach(record => {
+      deleteMutation.mutate(record.ProductID);
+    });
+  }
+};
+
+
 
   // Filter Handle
   const handleFilterChange = (e) => {
@@ -258,7 +288,12 @@ function Orders() {
         <AddProductDialog />
         {/* <AddCoachDialog /> */}
       </div>
-      <div className="toolbar">
+          <div className='flex flex-wrap gap-6'>
+          <ProductCard />
+          </div>
+
+
+      {/* <div className="toolbar">
         <DropDownListComponent
           width='7rem'
           id="status-filter"
@@ -267,8 +302,8 @@ function Orders() {
           placeholder="Filter by Status"
           change={handleFilterChange}
         />
-      </div>
-      <div className='w-1250'>
+      </div> */}
+      {/* <div className='w-1250'>
         <GridComponent
           dataSource={filteredData}
           allowPaging
@@ -278,23 +313,18 @@ function Orders() {
             allowDeleting: true,
             allowAdding: true
           }}
+          
+          actionBegin={handleActionBegin}
           width="auto"
         >
           <ColumnsDirective>
             {productGrid.map((item, index) => (
               <ColumnDirective key={index} {...item} />
             ))}
-            {/* <ColumnDirective
-              field="Status"
-              headerText="Actions"
-              width="150"
-              textAlign="Center"
-              template={actionTemplate}
-            /> */}
           </ColumnsDirective>
           <Inject services={[Page, Toolbar, Selection, Sort, Filter]} />
         </GridComponent>
-      </div>
+      </div> */}
     </div>
     <Toaster position="top-center"
                 reverseOrder={false}

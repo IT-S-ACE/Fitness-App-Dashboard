@@ -176,4 +176,16 @@ export const AddNewPosters = async (detail) => {
     return await api.post('/admin/products/Poster/create',detail)
 }
 
+export const DeleteProduct = async ({productID}) => {
+    return await api.delete(`/admin/products/DeleteProduct/${productID}`)
+}
+
+export const DeleteExercise = async ({ exerciseID }) => {
+    return await api.delete(`/admin/exercise/deleteExercise/${exerciseID}`);
+};
+
+export const DeleteMeal = async ({ mealID }) => {
+    return await api.delete(`/admin/meal/destroy/${mealID}`);
+};
+
 export default api
