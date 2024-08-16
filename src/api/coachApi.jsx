@@ -115,3 +115,7 @@ export const sendTrainerNotification = async ({ TrainerID }) => {
 export const CoachLogOut = async () => {
     return await coachApi.get('/coach/logout');
 };
+
+export const CoachDeleteExercisePlan = async ({ exerciseID }) => {
+    return await coachApi.delete(`/coach/exercise/deletePlanExercise/${exerciseID}`);
+};
