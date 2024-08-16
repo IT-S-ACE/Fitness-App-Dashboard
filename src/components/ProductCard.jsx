@@ -20,7 +20,7 @@ const ProductCard = () => {
                 <div key={product.id} className="cccontainerrr">
                     <div className="ccardd">
                         <div className="imgbox">
-                            <img className="iimageeee" src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${product.image}`} alt={product.name} />
+                            <img className="iimageeee" src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${product.image}`} alt={product.name} />
                         </div>
                         <div className="contentbox">
                             <h2>{product.id} -{product.name}</h2>
@@ -37,13 +37,13 @@ const ProductCard = () => {
                                     <span key={index}>{digit}</span>
                                 ))}
                             </div>
-                            <a href="#">Buy Now</a>
+                            {/* <a href="#">Buy Now</a> */}
                             <a href="#MealDelete" className="no-underline text-blue-600"
                                 // onClick={() => console.log(`Meal ID: ${exercise.id}`)}
                                 onClick={() => handleDelete(product.id)}  // Call handleDelete with exercise.id
                             >
                                 <Delete className='text-red-500' />
-                                <p>{product.id}</p>
+                                {/* <p>{product.id}</p> */}
                             </a>
                         </div>
                     </div>

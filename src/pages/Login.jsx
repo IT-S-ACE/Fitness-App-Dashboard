@@ -46,10 +46,18 @@ function Login() {
         onSuccess: (data) => {
             QueryClient.invalidateQueries("coachLogin")
             toast.success("Login Successfully")
-            navigate("/introduction");
+            console.log(data.data.user.price)
+            if(data.data.user.price != 0){
+                navigate('/Coach')
+            }else{
+                navigate("/introduction")
+            }
+            // {data.data.user.price !== 0 && navigate("/introduction")}
+            // navigate("/introduction");
             // setTimeout(() => {navigate('/ecommerce')}, 1000);
             console.log("siiiiiiiiiiiii", data.data.status)
             console.log("token", data.data.token)
+            console.log(data)
             // setCoachToken(data.data.token)
             Cookies.set('coachToken' , data.data.token , {expires: 7 , secure: true})
         },

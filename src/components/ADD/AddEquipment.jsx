@@ -52,7 +52,7 @@ const AddEquipment = () => {
     const [measuringUnit, setMeasuringUnit] = useState('')
     const [color, setColor] = useState([])
     const [size, setSize] = useState([])
-
+    const [stock, setStock] = useState('')
 
     const { mutate: addProduct } = useAddNewProduct()
 
@@ -84,9 +84,10 @@ const AddEquipment = () => {
         formData.append('price', price);
         formData.append('image', image);
         formData.append('brand', brand);
+        formData.append('stock', stock);
         formData.append('weight', weight);
         formData.append('measuring_nuit', measuringUnit);
-        formData.append('category_id', 3);
+        formData.append('category_id[2]', 3);
 
         // Append the checked color
         color.forEach((id, index) => {
@@ -211,7 +212,7 @@ const AddEquipment = () => {
                                 ))}
                             </div>
 
-                            <div className="mr-1 col-span-2">
+                            <div className="mr-1">
                                 <p className="flex">Description :</p>
                                 <TextField
                                     className="input-body-row1-textfeild1-TextFeild"
@@ -225,6 +226,19 @@ const AddEquipment = () => {
                                 />
                             </div>
                             
+                            <div className="mr-1">
+                                    <p className="flex">Stock :</p>
+                                    <TextField
+                                        className="input-body-row1-textfeild1-TextFeild"
+                                        margin="dense"
+                                        label="Stock"
+                                        type="number"
+                                        fullWidth
+                                        variant="outlined"
+                                        value={stock}
+                                        onChange={(e) => setStock(e.target.value)}
+                                    />
+                                </div>
 
                             <button
                                 className="p-4 bg-black text-white rounded-xl mt-2 button-effect border-2 col-start-2 col-end-3 -translate-x-44"

@@ -1,14 +1,15 @@
-import toast from 'react-hot-toast';
+import React from 'react'
 import { useMutation, useQueryClient } from 'react-query';
-import { DeleteMeal } from '../api/api';
+import { CoachDeleteMeal } from '../../api/coachApi';
+import toast from 'react-hot-toast';
 
-export const useDeleteMeal = () => {
+export const useCoachDeleteMeal = () => {
     const queryClient = useQueryClient();
 
-    return useMutation((mealID) => DeleteMeal({ mealID }), 
+    return useMutation((mealID) => CoachDeleteMeal({ mealID }), 
         {
             onSuccess: (data) => {
-                queryClient.invalidateQueries(['all-meals']);
+                queryClient.invalidateQueries(['all-coach-meals']);
                 console.log(data);
                 toast.success('Meal Deleted Successfully');
             },

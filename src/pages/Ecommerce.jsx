@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
@@ -24,6 +24,12 @@ import AddChallenge from '../components/ADD/AddChallenge';
 import { useAllDashboardData } from '../hook/useAllDashboardData';
 import { useAllRefundsData } from '../hook/useAllRefundsData';
 import AddPosters from '../components/ADD/AddPosters';
+import { SiSalesforce } from 'react-icons/si';
+import { FaSalesforce } from 'react-icons/fa';
+import { RiScalesLine } from 'react-icons/ri';
+import { Input } from '@mui/material';
+import { useGetSalesByMonth } from '../hook/useGetSalesByMonth';
+import { useAllCoachesData } from '../hook/useAllCoachesData';
 
 const DropDown = ({ currentMode }) => (
   <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
@@ -40,6 +46,18 @@ function Ecommerce() {
   const { data: CardsData } = useAllDashboardData()
 
   const { data: RefundsData } = useAllRefundsData()
+
+      // onSuccess logic
+      const onSuccess = (data) => {
+        console.log(data);
+    };
+
+    // onError logic
+    const onError = (err) => {
+        console.log(err.message);
+    };
+
+    const { data : AllCoachs } = useAllCoachesData(onSuccess, onError)
 
   const earningData = [
     {
@@ -85,7 +103,53 @@ function Ecommerce() {
   ];
 
 
-  const { currentColor, currentMode } = useStateContext();
+
+
+  const [formattedDate, setFormattedDate] = useState('');
+
+  const { mutate: dateSales } = useGetSalesByMonth()
+
+  // Handler to format date and update state
+  const handleDateChange = (e) => {
+    e.preventDefault();
+
+    console.log(monthlySalees)
+
+    // Extract and format the selected date
+    const selectedDate = new Date(e.target.value);
+    const year = selectedDate.getFullYear();
+    let month = (selectedDate.getMonth() + 1).toString(); // getMonth() returns 0-11, so add 1 for 1-12
+
+    // Ensure month is two digits (pad with leading zero if necessary)
+    if (month.length < 2) {
+      month = '0' + month;
+    }
+
+    // Update state with formatted date
+    const newFormattedDate = `${year}-${month}`;
+    setFormattedDate(newFormattedDate);
+
+    // After updating the state, call the mutate function
+    const formData = new FormData();
+    formData.append('month', newFormattedDate);
+
+    // Make sure `dateSales` is called with the correct date format
+    dateSales(formData);
+  };
+
+// const {monthlySalees , setSalesNumber} = useStateContext()
+
+// useEffect(() => {
+//   // Check if coachID is null and retrieve it from localStorage if necessary
+//   if (!monthlySalees) {
+//     const storeSalesNumber = localStorage.getItem('salesNum');
+//     if (storeSalesNumber) {
+//       setSalesNumber(storeSalesNumber);
+//     }
+//   }
+// }, [monthlySalees, setSalesNumber]);
+
+  const { currentColor, currentMode ,monthlySalees , setSalesNumber} = useStateContext();
   return (
     <div className='mt-12'>
       <div className='flex flex-wrap
@@ -119,7 +183,7 @@ function Ecommerce() {
           {earningData.map((item) => (
             <div
               key={item.title}
-              className='cards-width bg-white 
+              className='w-72 bg-white 
               dark:text-gray-200
               dark:bg-secondary-dark-bg-dark-bg md:w-56
               p-4 pt-1 rounded-2xl m-3 drop-shadow-lg'
@@ -144,10 +208,45 @@ function Ecommerce() {
               <p className='text-sm text-gray-400 mt-1'>{item.title}</p>
             </div>
           ))}
+          <div
+            className='w-72 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg-dark-bg md:w-56 p-4 pt-1 rounded-2xl m-3 drop-shadow-lg'
+          >
+            <button
+              type='button'
+              style={{
+                color: '#fff',
+                background: 'linear-gradient(60deg, #9c27b0, #ab47bc)', // Purple gradient
+                boxShadow: '0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(156, 39, 176, .4)', // Purple box shadow
+              }}
+              className='text-2xl p-6 rounded-sm hover:drop-shadow-xl -translate-y-10'
+            >
+              <span className='w-14 h-14 overflow-visible text-4xl text-center leading-14 mb-1'>
+                <RiScalesLine />
+              </span>
+            </button>
+            <div className='flex justify-between'>
+              <div>
+                <p className='mt-3'>
+                  {/* salesNum instad of 22  */}
+                  <span className='text-lg font-semibold'>{monthlySalees}</span>
+                  {/* <span className={`text-sm text-green-600 ml-2`}>-11</span> */}
+                </p>
+                <p className='text-sm text-gray-400 mt-1'>sales</p>
+              </div>
+              <input
+                type='date'
+                className='w-10'
+                onChange={handleDateChange}
+              />
+            </div>
+            {/* <div className='mt-4'>
+              <p className='text-lg font-semibold'>{formattedDate}</p>
+            </div> */}
+          </div>
         </div>
       </div>
       {/* Chart */}
-      <div className='flex gap-10 flex-wrap justify-center '>
+      {/* <div className='flex gap-10 flex-wrap justify-center '>
         <div className='bg-white
             dark:text-gray-200
               dark:bg-secondary-dark-bg m-3 p-4
@@ -250,13 +349,13 @@ function Ecommerce() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="flex gap-10 m-4 flex-wrap justify-center">
+      {/* <div className="flex gap-10 m-4 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg p-6 rounded-2xl">
           <div className="flex justify-between items-center gap-2">
             <p className="text-xl font-semibold">Category</p>
-            {/* <DropDown currentMode={currentMode} /> */}
+            // <DropDown currentMode={currentMode} />
             <Modal buttonContent={<div className='w-36 flex justify-between items-center'> <BiPlus className='scale-125' /> <span>Add Category</span></div>} numStyle='one'>
               <AddCategory />
             </Modal>
@@ -273,14 +372,14 @@ function Ecommerce() {
                     }}
                     className="text-2xl rounded-lg pr-4 hover:drop-shadow-xl"
                   >
-                    <img src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${item.image}`} alt="" className='h-12 w-12 flex items-start' />
+                    <img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${item.image}`} alt="" className='h-12 w-12 flex items-start' />
                   </button>
                   <div>
                     <p className="text-md font-semibold">{item.category_name}</p>
                     <p className="text-sm text-gray-400">{item.description}</p>
                   </div>
                 </div>
-                {/* <p className={`text-${item.pcColor}`}>{item.amount}</p> */}
+                // <p className={`text-${item.pcColor}`}>{item.amount}</p>
 
               </div>
             ))}
@@ -307,7 +406,7 @@ function Ecommerce() {
             <LineChart />
           </div>
         </div>
-      </div>
+      </div> */}
       {/* All Challenges / Add Challenge */}
       <div className="flex flex-wrap justify-center">
         <div className="md:w-400 bg-white dark:text-gray-200 dark:bg-secondary-dark-bg rounded-2xl p-6 m-3">
@@ -331,7 +430,7 @@ function Ecommerce() {
                       }}
                       className="text-2xl rounded-lg pr-4 hover:drop-shadow-xl"
                     >
-                      <img src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${challenge.image}`} alt="" className='h-12 w-12 flex items-start' />
+                      <img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${challenge.image}`} alt="" className='h-12 w-12 flex items-start' />
                     </button>
                     <div>
                       <p className="text-md font-semibold">{challenge.challenge_name}</p>
@@ -382,15 +481,15 @@ function Ecommerce() {
             16 APR, 2021
           </p>
 
-          <div className="flex gap-4 border-b-1 border-color mt-6">
-            {medicalproBranding.data.map((item) => (
-              <div key={item.title} className="border-r-1 border-color pr-4 pb-2">
-                <p className="text-xs text-gray-400">{item.title}</p>
-                <p className="text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="border-b-1 border-color pb-4 mt-2">
+            <div className="flex gap-4 border-b-1 border-color mt-6">
+              {medicalproBranding.data.map((item) => (
+                <div key={item.title} className="border-r-1 border-color pr-4 pb-2">
+                  <p className="text-xs text-gray-400">{item.title}</p>
+                  <p className="text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          <div className="border-b-1  border-color pb-4 mt-3">
             <p className="text-md font-semibold mb-2">Teams</p>
 
             <div className="flex gap-4">
@@ -408,9 +507,12 @@ function Ecommerce() {
           <div className="mt-2">
             <p className="text-md font-semibold mb-2">Coachs</p>
             <div className="flex gap-4">
-              {medicalproBranding.leaders.map((item, index) => (
+              {/* {medicalproBranding.leaders.map((item, index) => (
                 <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
-              ))}
+              ))} */}
+              {AllCoachs?.coach?.map((coach, index) => {
+                return <img key={index} className="rounded-full w-8 h-8" src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${coach.image}`} alt="Coach" />
+              })}
             </div>
           </div>
           <div className="flex justify-between items-center mt-5 border-t-1 border-color">

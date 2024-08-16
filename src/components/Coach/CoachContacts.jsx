@@ -10,6 +10,8 @@ import sEgg from '../../assets/paella.jpg';
 import { useCoachAllMealsData } from '../../hook/Coach/useCoachAllMealsData';
 import { useCoachAllingredientsData } from '../../hook/Coach/useCoachAllingredientsData';
 import { motion } from 'framer-motion'; // Import Framer Motion
+import { useCoachDeleteIngredient } from '../../hook/Coach/useCoachDeleteIngredient';
+import { useCoachDeleteMeal } from '../../hook/Coach/useCoachDeleteMeal';
 
 const CoachContacts = () => {
 
@@ -17,11 +19,27 @@ const CoachContacts = () => {
 
     const { data: allIngredients } = useCoachAllingredientsData();
 
+    //Delete Ingredient
+    const { mutate: deleteIngredient } = useCoachDeleteIngredient()
+
+    const handleDeleteIngredient = (ingredientID) => {
+        deleteIngredient(ingredientID);
+    };
+
+    //Delete Meal
+    const { mutate: deleteMeal } = useCoachDeleteMeal()
+
+    const handleDelete = (mealID) => {
+        deleteMeal(mealID);
+    };
+
+
     const cardAnimation = {
         initial: { y: 50, opacity: 0 },
         whileInView: { y: 0, opacity: 1 },
         transition: { duration: 0.5, ease: 'easeOut' }
     };
+
 
     return (
         <section id="Contact" className="section-Background py-24 h-800 flex">
@@ -44,7 +62,7 @@ const CoachContacts = () => {
                             viewport={{ once: true, amount: 0.3 }}
                         >
                             <div className="">
-                                <img className='w-full h-52' src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${ing.image}`} alt={ing.name} />
+                                <img className='w-full h-52' src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${ing.image}`} alt={ing.name} />
                             </div>
                             <div className="p-4">
                                 <p className="text-sm text-white">Ingredient</p>
@@ -52,7 +70,10 @@ const CoachContacts = () => {
                                     <span className='text-white '>
                                         {ing.id} - {ing.name}
                                     </span>
-                                    <a href="#" className="no-underline text-blue-600">
+                                    <a href="#MealDelete" className="no-underline text-blue-600"
+                                        // onClick={() => console.log(`Meal ID: ${exercise.id}`)}
+                                        onClick={() => handleDeleteIngredient(ing.id)}
+                                    >
                                         <Delete className='text-red-500' />
                                     </a>
                                 </strong>
@@ -80,14 +101,18 @@ const CoachContacts = () => {
                             viewport={{ once: true, amount: 0.3 }}
                         >
                             <div className="">
-                                <img className='w-full h-52' src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${meal.image}`} alt={meal.name} />
+                                <img className='w-full h-52' src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${meal.image}`} alt={meal.name} />
                             </div>
                             <div className="p-4">
                                 <strong className="flex justify-between font-extrabold mt-3">
                                     <span className='text-white '>
                                         {meal.name}
                                     </span>
-                                    <a href="#" className="no-underline text-blue-600">
+                                    <a href="#MealDelete" className="no-underline text-blue-600"
+                                        // onClick={() => console.log(`Meal ID: ${exercise.id}`)}
+                                        onClick={() => handleDelete(meal.id)}  // Call handleDelete with exercise.id
+
+                                    >
                                         <Delete className='text-red-500' />
                                     </a>
                                 </strong>
@@ -102,7 +127,7 @@ const CoachContacts = () => {
                                     <p className='flex'>Ingredient: </p>
                                     <div className='flex flex-wrap'>
                                         {meal.ingredients.map((imag) => (
-                                            <img key={imag.id} src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
+                                            <img key={imag.id} src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
                                         ))}
                                     </div>
                                     {/* <p className='my-2 flex justify-center items-center'>Salt: {meal.salt}</p> */}

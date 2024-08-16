@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from 'js-cookie';
 
 const coachApi = axios.create({
-    baseURL: 'https://de68-138-199-7-163.ngrok-free.app/api'
+    baseURL: 'https://48c4-146-70-246-155.ngrok-free.app/api'
 })
 
 coachApi.interceptors.request.use(
@@ -93,3 +93,25 @@ export const GetAllTrainers = async () => {
 );
     return response.data
 }
+
+export const GetTotalSells = async () => {
+    const response = await coachApi.get('/coach/user/totalSale' 
+);
+    return response.data
+}
+
+export const CoachDeleteIngredient = async ({ ingredientID }) => {
+    return await coachApi.delete(`/coach/ingredient/destroy/${ingredientID}`);
+};
+
+export const CoachDeleteMeal = async ({ mealID }) => {
+    return await coachApi.delete(`/coach/meal/destroy/${mealID}`);
+};
+
+export const sendTrainerNotification = async ({ TrainerID }) => {
+    return await coachApi.delete(`/coach/meal/destroy/${TrainerID}`);
+};
+
+export const CoachLogOut = async () => {
+    return await coachApi.get('/coach/logout');
+};

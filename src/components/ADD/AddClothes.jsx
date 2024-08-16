@@ -41,6 +41,7 @@ const allMeasuringUnit = [ // dropdown
 ]
 
 const subCategory = [
+
     { id: 4, name: 'shorts' },
     { id: 5, name: 'pants' },
     { id: 6, name: 'shirts' },
@@ -55,8 +56,10 @@ const AddClothes = () => {
     const [price, setPrice] = useState('')
     const [image, setImage] = useState(null)
     const [brand, setBrand] = useState('')
+    const [stock, setStock] = useState('')
     const [color, setColor] = useState([])
     const [size, setSize] = useState([])
+
     const [categoryID, setCategoryID] = useState('')
 
     const { mutate: addProduct } = useAddNewProduct()
@@ -89,8 +92,11 @@ const AddClothes = () => {
         formData.append('price', price);
         formData.append('image', image);
         formData.append('brand', brand);
-        formData.append('category_id', 1);
-        formData.append('sub_Categories[0]', categoryID);
+        formData.append('stock', stock);
+        formData.append('category_id[0]', 1);
+        formData.append('category_id[3]', categoryID);
+
+        // formData.append('sub_Categories[0]', categoryID);
 
         // Append the checked color
         color.forEach((id, index) => {
@@ -205,6 +211,19 @@ const AddClothes = () => {
                                         variant="outlined"
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}
+                                    />
+                                </div>
+                                <div className="mr-1">
+                                    <p className="flex">Stock :</p>
+                                    <TextField
+                                        className="input-body-row1-textfeild1-TextFeild"
+                                        margin="dense"
+                                        label="Stock"
+                                        type="number"
+                                        fullWidth
+                                        variant="outlined"
+                                        value={stock}
+                                        onChange={(e) => setStock(e.target.value)}
                                     />
                                 </div>
 

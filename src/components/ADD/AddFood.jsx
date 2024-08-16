@@ -51,6 +51,7 @@ const AddFood = () => {
     const [protein, setProtein] = useState('')
     const [creatine, setCreative] = useState('')
 
+    const [stock, setStock] = useState('')
     const [expirationData, setExpirationDate] = useState('')
     const [color, setColor] = useState([])
     const [size, setSize] = useState([])
@@ -90,8 +91,9 @@ const AddFood = () => {
         formData.append('measuring_nuit', measuringUnit);
         formData.append('protein', protein);
         formData.append('creatine', creatine);
+        formData.append('stock', stock);
         formData.append('expiration_date', expirationData);
-        formData.append('category_id', 2);
+        formData.append('category_id[1]', 2);
 
 
         // Append the checked color
@@ -229,7 +231,7 @@ const AddFood = () => {
                                 ))}
                             </div>
 
-                            <div className="mr-1 col-span-2">
+                            <div className="mr-1">
                                 <p className="flex">Description :</p>
                                 <TextField
                                     className="input-body-row1-textfeild1-TextFeild"
@@ -242,6 +244,20 @@ const AddFood = () => {
                                     onChange={(e) => setDescription(e.target.value)}
                                 />
                             </div>
+
+                            <div className="mr-1">
+                                    <p className="flex">Stock :</p>
+                                    <TextField
+                                        className="input-body-row1-textfeild1-TextFeild"
+                                        margin="dense"
+                                        label="Stock"
+                                        type="number"
+                                        fullWidth
+                                        variant="outlined"
+                                        value={stock}
+                                        onChange={(e) => setStock(e.target.value)}
+                                    />
+                                </div>
 
                             <button
                                 className="p-4 bg-black text-white rounded-xl mt-2 button-effect border-2 col-start-2 col-end-3 -translate-x-44"

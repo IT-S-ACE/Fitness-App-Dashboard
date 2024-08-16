@@ -1,16 +1,17 @@
-import toast from 'react-hot-toast';
+import React from 'react'
 import { useMutation, useQueryClient } from 'react-query';
-import { DeleteMeal } from '../api/api';
+import { DeleteArticle } from '../api/api';
+import toast from 'react-hot-toast';
 
-export const useDeleteMeal = () => {
+export const useDeleteArticle = () => {
     const queryClient = useQueryClient();
 
-    return useMutation((mealID) => DeleteMeal({ mealID }), 
+    return useMutation((articleID) => DeleteArticle({ articleID }), 
         {
             onSuccess: (data) => {
-                queryClient.invalidateQueries(['all-meals']);
+                queryClient.invalidateQueries(['all-article']);
                 console.log(data);
-                toast.success('Meal Deleted Successfully');
+                toast.success('Article Deleted Successfully');
             },
             onError: (err) => {
                 console.log(err.message);

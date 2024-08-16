@@ -36,7 +36,7 @@
 //                         You can see your <span className='text-blue-400'>Trainers</span> data and check it
 //                     </h1>
 //                 </motion.div>
-                
+
 //                 <motion.div 
 //                     className='w-800'
 //                     initial={{ x: '100vw', opacity: 0 }}
@@ -92,15 +92,25 @@ import profile from '../../assets/profile.png';
 import Header from '../Header';
 import { motion } from 'framer-motion';
 import { useAllTrainersData } from '../../hook/Coach/useAllTrainersData';
+import { NotificationAdd } from '@mui/icons-material';
+import { useSendNotification } from '../../hook/Coach/useSendNotification';
 
 const CoachService = () => {
 
-    const {data : allTrainers} = useAllTrainersData()
+        //send Notification
+        const { mutate: sendNotification} = useSendNotification()
+
+        const handleSendNotification = (TrainerID) => {
+            sendNotification(TrainerID);
+        };
+
+    const { data: allTrainers } = useAllTrainersData()
+    console.log(allTrainers)
 
     return (
-        <section id="services" className="py-24 bg-cover bg-center section-Background2">
+        <section id="services" className="py-24 bg-cover bg-center h-screen section-Background2">
             <div className='flex justify-evenly items-center'>
-                <motion.div 
+                <motion.div
                     className='w-96'
                     initial={{ x: '-100px', opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -111,9 +121,9 @@ const CoachService = () => {
                         You can see your <span className='text-blue-400'>Trainers</span> data and check it
                     </h1>
                 </motion.div>
-                
-                <motion.div 
-                    className='w-800'
+
+                <motion.div
+                    className='w-1000'
                     initial={{ x: '100px', opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ type: 'spring', stiffness: 50, duration: 0.8 }}
@@ -133,25 +143,33 @@ const CoachService = () => {
                                             <th className='px-4 py-2 border-b-2 border-gray-300'>Name</th>
                                             <th className='px-4 py-2 border-b-2 border-gray-300'>Goal</th>
                                             <th className='px-4 py-2 border-b-2 border-gray-300'>Start Date</th>
-                                            <th className='px-4 py-2 border-b-2 border-gray-300'>End Date</th>
+                                            <th className='px-4 py-2 border-b-2 border-gray-300'>Action</th>
+                                            {/* <th className='px-4 py-2 border-b-2 border-gray-300'>End Date</th> */}
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {allTrainers?.data?.map((trainer) => {
+                                        {allTrainers?.map((trainer) => {
+                                            const created_at = new Date(trainer.user.created_at).toLocaleDateString()
                                             return <>
                                                 <tr key={trainer.id} className='hover:bg-gray-100'>
-                                                <th className='px-4 py-2 border-b'>{trainer.user.id}</th>
-                                                <th className='px-4 py-2 border-b'>
-                                                    <img src={profile} alt="Article" className='w-14 h-14' />
-                                                </th>
-                                                <th className='px-4 py-2 border-b'>{trainer.user.name}</th>
-                                                <th className='px-4 py-2 border-b'>{trainer.user.target}</th>
-                                                <th className='px-4 py-2 border-b'>{trainer.user.created_at}</th>
-                                                <th className='px-4 py-2 border-b'>{trainer.user.updated_at}</th>
-                                            </tr>
+                                                    <th className='px-4 py-2 border-b'>{trainer.user.id}</th>
+                                                    <th className='px-4 py-2 border-b'>
+                                                        <img src={profile} alt="Article" className='w-14 h-14' />
+                                                    </th>
+                                                    <th className='px-4 py-2 border-b'>{trainer.user.name}</th>
+                                                    <th className='px-4 py-2 border-b'>{trainer.user.target}</th>
+                                                    <th className='px-4 py-2 border-b'>{created_at}</th>
+                                                    <th className='px-4 py-2 border-b'>
+                                                        <a href="#MealDelete" className="no-underline text-blue-600"
+                                                            onClick={() => handleSendNotification(trainer.user_id)}
+                                                        >
+                                                            <NotificationAdd className=' font-extrabold scale-125 cursor-pointer transition ease-in delay-100 hover:drop-shadow-2xl shadow-red-500 duration-300' />
+                                                        </a></th>
+                                                    {/* <th className='px-4 py-2 border-b'>{trainer.user.updated_at}</th> */}
+                                                </tr>
                                             </>
                                         })}
-                                        {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((id) => (
+                                        {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((id) => (
                                             <tr key={id} className='hover:bg-gray-100'>
                                                 <th className='px-4 py-2 border-b'>{id}</th>
                                                 <th className='px-4 py-2 border-b'>
@@ -162,7 +180,7 @@ const CoachService = () => {
                                                 <th className='px-4 py-2 border-b'>22/19/1986</th>
                                                 <th className='px-4 py-2 border-b'>22/19/1986</th>
                                             </tr>
-                                        ))}
+                                        ))} */}
                                     </tbody>
                                 </table>
                             </div>

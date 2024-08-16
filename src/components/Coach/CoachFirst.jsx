@@ -5,9 +5,32 @@ import { earningData } from '../../data/dummy'
 import { duration } from '@mui/material';
 import {useCoachGetInfo} from '../../hook/Coach/useCoachGetInfo.js'
 import { useStateContext } from '../../contexts/ContextProvider.js';
+import { FiBarChart } from 'react-icons/fi';
+import { useAllTotalSales } from '../../hook/Coach/useAllTotalSales.js';
+
+
+
 
 const CoachFirst = () => {
   const { coachID , setStorCoachID} = useStateContext()
+
+  const {data : totalSales} = useAllTotalSales()
+
+  const earningData = [
+
+    {
+      icon: <FiBarChart />,
+      amount: `${totalSales?.data}`,
+      percentage: '+38%',
+      title: 'Sales',
+      iconColor: '#fff',
+      iconBg: 'linear-gradient(60deg, #ef5350, #e53935)',
+      iconShadow: '0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(244, 67, 54, .4)',
+      pcColor: 'green-600',
+    },
+    
+  ];
+
 
   useEffect(() => {
     // Check if coachID is null and retrieve it from localStorage if necessary
@@ -56,7 +79,7 @@ const CoachFirst = () => {
           {earningData.map((item) => (
             <motion.div
               key={item.title}
-              className="cards-width bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-1 rounded-2xl m-7 drop-shadow-lg card-Background"
+              className="max-h-40 mt-12 cards-width bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-1 rounded-2xl m-7 drop-shadow-lg card-Background"
               variants={childVariants}
             >
               <button
@@ -88,7 +111,7 @@ const CoachFirst = () => {
         className="bg-white w-96 ml-52 rounded-lg card-Background mt-10"
         >
           <div className="flex justify-center -translate-y-11">
-            <img src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${coachInfo?.coach[0]?.image}`} alt="Coach Profile" className="rounded-full w-32 h-32 border-1 border-black" />
+            <img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${coachInfo?.coach[0]?.image}`} alt="Coach Profile" className="rounded-full w-32 h-32 border-1 border-black" />
           </div>
           <p className="text-2xl">{coachInfo?.coach[0]?.name}</p>
           <p className="my-3">{coachInfo?.coach[0]?.bio}</p>

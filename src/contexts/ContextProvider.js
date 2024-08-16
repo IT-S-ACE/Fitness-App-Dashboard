@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
+
 const StateContext = createContext();
 
 const initialState = {
@@ -20,6 +21,8 @@ export const ContextProvider = ({ children }) => {
   
   const [coachID, setCoachID] = useState(localStorage.getItem('coachId') || null); // Updated
 
+  const [monthlySalees, setMonthlySales ] = useState(localStorage.getItem('salesNum') || 0); // Updated
+
   const setMode = (e) => {
     setCurrentMode(e.target.value);
     localStorage.setItem('themeMode', e.target.value);
@@ -35,6 +38,11 @@ export const ContextProvider = ({ children }) => {
     localStorage.setItem('coachId', ID);
   };
 
+  const setSalesNumber = (salesNumb) => {
+    setMonthlySales(salesNumb);
+    localStorage.setItem('salesNum', salesNumb);
+  };
+
   const setColor = (color) => {
     setCurrentColor(color);
     localStorage.setItem('colorMode', color);
@@ -46,7 +54,7 @@ export const ContextProvider = ({ children }) => {
   const handleClick2 = (clicked) => setIsClicked({...initialState, [clicked]: false })
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <StateContext.Provider value={{setStorCoachID,coachID, setCoachID ,handleClick2 , setToken , adminToken , setAdminToken , currentColor, currentMode, activeMenu, screenSize, setScreenSize, handleClick, isClicked, initialState, setIsClicked, setActiveMenu, setCurrentColor, setCurrentMode, setMode, setColor, themeSettings, setThemeSettings }}>
+    <StateContext.Provider value={{setSalesNumber , monthlySalees ,setStorCoachID,coachID, setCoachID ,handleClick2 , setToken , adminToken , setAdminToken , currentColor, currentMode, activeMenu, screenSize, setScreenSize, handleClick, isClicked, initialState, setIsClicked, setActiveMenu, setCurrentColor, setCurrentMode, setMode, setColor, themeSettings, setThemeSettings }}>
       {children}
     </StateContext.Provider>
   );

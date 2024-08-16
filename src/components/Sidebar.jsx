@@ -316,6 +316,7 @@ allLinks.forEach((elem) => {
       </ul>
     </div>
     <div className="divider"></div>
+    <NavLink to='/'>
     <div className="sidebar__profile">
       <div className="avatar__wrapper">
         <img className="avatar" src={logOutLogo} alt="Joe Doe Picture" />
@@ -336,6 +337,7 @@ allLinks.forEach((elem) => {
         </svg>
       </a>
     </div>
+  </NavLink>
   </nav>
     </>
   )

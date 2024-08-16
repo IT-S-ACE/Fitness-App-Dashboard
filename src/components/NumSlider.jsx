@@ -10,7 +10,7 @@ const Input = styled(MuiInput)`
   width: 42px;
 `;
 
-const NumSlider = ({ Label, value, onChange }) => {
+const NumSlider = ({ Label, value, onChange, maxLength }) => {
 
     const handleSliderChange = (event, newValue) => {
         onChange(newValue);
@@ -49,9 +49,9 @@ const NumSlider = ({ Label, value, onChange }) => {
                         onChange={handleInputChange}
                         onBlur={handleBlur}
                         inputProps={{
-                            step: 10,
+                            step: 1,
                             min: 0,
-                            max: 100,
+                            max: {maxLength},
                             type: 'number',
                             'aria-labelledby': 'input-slider',
                         }}

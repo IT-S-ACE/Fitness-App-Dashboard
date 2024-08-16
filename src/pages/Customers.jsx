@@ -233,6 +233,8 @@ import { Header } from '../components';
 import StatusEditButton from '../components/CustomDropDown';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { customersGrid } from '../data/dummy';
+import { useMutation, useQueryClient } from 'react-query';
+import { DeleteProduct } from '../api/api';
 
 const transformProductData = (orders) => {
   return orders.map(order => ({

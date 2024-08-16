@@ -14,12 +14,20 @@ import AddArticle from '../components/ADD/AddArticle';
 import { BiPlus } from 'react-icons/bi';
 import DeleteButton from '../components/DeleteButton';
 import { useAllArticleData } from '../hook/useAllArticleData';
+import { useDeleteArticle } from '../hook/useDeleteArticle';
 
 function Kanban() {
   // const [authorName, setAuthorName] = useState('')
   // const [article, setArticle] = useState('')
   // const [title, setTitle] = useState('')
   // const [image, setImage] = useState(null)
+
+  const { mutate: deleteArticle } = useDeleteArticle()
+
+  const handleDelete = (articleID) => {
+    deleteArticle(articleID); 
+  };
+
 
   const{data : allArticles} = useAllArticleData()
 
@@ -214,7 +222,7 @@ function Kanban() {
                   <tr key={article.id} className='hover:bg-gray-100'>
                   <th className='px-4 py-2 border-b'>{article.id}</th>
                   <th className='px-4 py-2 border-b'>
-                    <img src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${article.image}`} alt="Article" className='w-14 h-14 translate-x-20' />
+                    <img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${article.image}`} alt="Article" className='w-14 h-14 translate-x-20' />
                   </th>
                   <th className='px-4 py-2 border-b'>{article.Author_Name}</th>
                   <th className='px-4 py-2 border-b'>{article.title}</th>
@@ -222,7 +230,13 @@ function Kanban() {
                     {/* <div className='flex justify-center items-center z-10'>
                     <DeleteButton />
                     </div> */}
+                    <a href="#MealDelete" className="no-underline text-blue-600"
+                      // onClick={() => console.log(`Meal ID: ${exercise.id}`)}
+                      onClick={() => handleDelete(article.id)}  // Call handleDelete with exercise.id
+
+                    >
                       <Delete className=' font-extrabold scale-125 text-red-600 cursor-pointer transition ease-in delay-100 hover:drop-shadow-2xl shadow-red-500 duration-300'/>
+                      </a>
                     {/* <button className='text-blue-600 ml-2'>
                       <Edit />
                     </button> */}

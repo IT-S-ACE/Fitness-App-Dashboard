@@ -17,6 +17,7 @@ import { Toaster } from 'react-hot-toast'
 import { useAllIngredientsData } from '../hook/useAllIngredientsData'
 import { useAllMealsData } from '../hook/useAllMealsData'
 import { useDeleteMeal } from '../hook/useDeleteMeal'
+import { useDeleteIngredient } from '../hook/useDeleteIngredient'
 
 const Meal = () => {
     const images = [
@@ -26,10 +27,18 @@ const Meal = () => {
         { id: 4, img: sEgg },
     ]
 
+    //Delete Meal
     const { mutate: deleteMeal } = useDeleteMeal()
 
     const handleDelete = (mealID) => {
         deleteMeal(mealID);
+    };
+
+    //Delete Ingredient
+    const { mutate: deleteIngredient } = useDeleteIngredient()
+
+    const handleDeleteIngredient = (ingredientID) => {
+        deleteIngredient(ingredientID);
     };
 
     // All ingredients
@@ -82,7 +91,7 @@ const Meal = () => {
                         return <>
                             <div key={ing.id} className="bg-black border-1 border-black min-h-56 min-w-52 overflow-hidden w-80 rounded-xl m-5 card-effect">
                                 <div className="">
-                                    <img className='w-full h-52 ' src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${ing.image}`} alt="Minecraft" />
+                                    <img className='w-full h-52 ' src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${ing.image}`} alt="Minecraft" />
                                 </div>
                                 <div className="p-4">
                                     <p className="text-sm text-white">Ingredient</p>
@@ -90,7 +99,10 @@ const Meal = () => {
                                         <span className='text-white '>
                                             {ing.id} - {ing.name}
                                         </span>
-                                        <a href="#" className="no-underline text-blue-600">
+                                        <a href="#IngredientDelete" className="no-underline text-blue-600"
+                                            // onClick={() => console.log(`Meal ID: ${exercise.id}`)}
+                                            onClick={() => handleDeleteIngredient(ing.id)}  
+                                        >
                                             <Delete className='text-red-500' />
                                         </a>
                                     </strong>
@@ -114,7 +126,7 @@ const Meal = () => {
                         return <>
                             <div key={meal.id} className="bg-black border-1 border-black min-h-56 w-64 overflow-hidden rounded-xl m-5 card-effect">
                                 <div className="">
-                                    <img className='w-full h-52' src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${meal.image}`} alt="Minecraft" />
+                                    <img className='w-full h-52' src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${meal.image}`} alt="Minecraft" />
                                 </div>
                                 <div className="p-4">
                                     <strong className="flex justify-between font-extrabold mt-3">
@@ -143,7 +155,7 @@ const Meal = () => {
                                             {meal.ingredients.map((imag) => {
                                                 return (
                                                     <>
-                                                        <img src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
+                                                        <img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
                                                     </>
                                                 )
                                             })}

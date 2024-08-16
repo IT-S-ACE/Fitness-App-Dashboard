@@ -39,7 +39,7 @@ export const gridProductImage = (props) => (
     <img
       className="rounded-xl h-20 md:ml-3"
       // src={props.ProductImage}
-      src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${props.Product}`}
+      src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${props.Product}`}
       alt={props.ProductName}
     />
   </div>
@@ -77,7 +77,7 @@ const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
     <img
       className="rounded-full w-10 h-10"
-      src={`https://de68-138-199-7-163.ngrok-free.app/Uploads/${props.EmployeeImage}`}
+      src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${props.EmployeeImage}`}
       alt={props.Name}
     />
     <p>{props.Name}</p>
@@ -826,11 +826,11 @@ export const medicalproBranding = {
     },
     {
       title: 'Budget',
-      desc: '$98,500',
+      desc: '20%',
     },
     {
-      title: 'Expense',
-      desc: '$63,000',
+      title: 'Expense (minimum)',
+      desc: '70$',
     },
   ],
   teams: [
@@ -840,6 +840,10 @@ export const medicalproBranding = {
     },
     {
       name: 'Build Muscle',
+      color: '#FB9678',
+    },
+    {
+      name: 'Keep Fit',
       color: '#FB9678',
     },
   ],
