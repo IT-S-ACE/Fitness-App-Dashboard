@@ -109,7 +109,7 @@ export const CoachDeleteMeal = async ({ mealID }) => {
 };
 
 export const sendTrainerNotification = async ({ TrainerID }) => {
-    return await coachApi.delete(`/coach/meal/destroy/${TrainerID}`);
+    return await coachApi.get(`/coach/plan/subscriptionEnds/${TrainerID}`);
 };
 
 export const CoachLogOut = async () => {

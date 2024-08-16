@@ -35,10 +35,10 @@ const allFocusArea = [
   
   const allMuscleArea = [
     { id: 1, name: 'CHEST' },
-    { id: 1, name: 'ARM' },
-    { id: 1, name: 'LEG' },
-    { id: 1, name: 'ABS' },
-    { id: 1, name: 'SHOULDER&Back' },
+    { id: 2, name: 'ARM' },
+    { id: 3, name: 'LEG' },
+    { id: 4, name: 'ABS' },
+    { id: 5, name: 'SHOULDER&Back' },
   ];
   
   const allTarget = [
@@ -211,7 +211,7 @@ const AddExercise = () => {
                 </div>
               </div>
               <div className="pl-8">
-                <NumSlider Label="Reps" value={reps} onChange={setReps} maxLength={`${12}`}/>
+                <NumSlider Label="Reps" value={reps} onChange={setReps} maxLength='12'/>
               </div>
 
               <div>

@@ -23,8 +23,8 @@ const NumSlider = ({ Label, value, onChange, maxLength }) => {
     const handleBlur = () => {
         if (value < 0) {
             onChange(0);
-        } else if (value > 100) {
-            onChange(100);
+        } else if (value > maxLength) {
+            onChange(maxLength);
         }
     };
 
@@ -40,6 +40,7 @@ const NumSlider = ({ Label, value, onChange, maxLength }) => {
                         onChange={handleSliderChange}
                         color='secondary'
                         aria-labelledby="input-slider"
+                        max={maxLength} // Set the maximum value for the slider
                     />
                 </Grid>
                 <Grid item>
@@ -51,7 +52,7 @@ const NumSlider = ({ Label, value, onChange, maxLength }) => {
                         inputProps={{
                             step: 1,
                             min: 0,
-                            max: {maxLength},
+                            max: maxLength, // Set the maximum value for the input
                             type: 'number',
                             'aria-labelledby': 'input-slider',
                         }}

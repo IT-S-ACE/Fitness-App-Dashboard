@@ -376,10 +376,10 @@ const allFocusArea = [
 
 const allMuscleArea = [
   { id: 1, name: 'CHEST' },
-  { id: 1, name: 'ARM' },
-  { id: 1, name: 'LEG' },
-  { id: 1, name: 'ABS' },
-  { id: 1, name: 'SHOULDER&Back' },
+  { id: 2, name: 'ARM' },
+  { id: 3, name: 'LEG' },
+  { id: 4, name: 'ABS' },
+  { id: 5, name: 'SHOULDER&Back' },
 ];
 
 const allTarget = [
@@ -403,8 +403,7 @@ const allDiseases = [
   { id: 1, name: 'heart' },
   { id: 2, name: 'knee' },
   { id: 3, name: 'breath' },
-  { id: 4, name: 'blood pressure' },
-  { id: 5, name: 'diabetes' },
+  { id: 4, name: 'none' },
 ];
 
 const allGenders = [
@@ -420,6 +419,27 @@ const allDays = [
   { id: 5, name: 'Thursday' },
   { id: 6, name: 'Friday' },
   { id: 7, name: 'Saturday' },
+  { id: 8, name: 'Sunday' },
+  { id: 9, name: 'Monday' },
+  { id: 10, name: 'Tuesday' },
+  { id: 11, name: 'Wednesday' },
+  { id: 12, name: 'Thursday' },
+  { id: 13, name: 'Friday' },
+  { id: 14, name: 'Saturday' },
+  { id: 15, name: 'Sunday' },
+  { id: 16, name: 'Monday' },
+  { id: 17, name: 'Tuesday' },
+  { id: 18, name: 'Wednesday' },
+  { id: 19, name: 'Thursday' },
+  { id: 20, name: 'Friday' },
+  { id: 21, name: 'Saturday' },
+  { id: 22, name: 'Sunday' },
+  { id: 23, name: 'Monday' },
+  { id: 24, name: 'Tuesday' },
+  { id: 25, name: 'Wednesday' },
+  { id: 26, name: 'Thursday' },
+  { id: 27, name: 'Friday' },
+  { id: 28, name: 'Saturday' },
 ];
 
 const CoachAddExercise = ({ plan_id }) => {
@@ -560,11 +580,11 @@ const CoachAddExercise = ({ plan_id }) => {
               <div className='col-span-1'>
                 <DargDrop setImage={setGif} />
               </div>
-              <div className="border-2 border-gray-700 rounded-xl overflow-y-scroll">
+              <div className="border-2 border-gray-700 rounded-xl overflow-y-scroll max-h-96">
                 {allDays.map((day) => (
                   <div key={day.id} className="px-5 cursor-pointer" onClick={() => handleDAYcheckBox(day.id)}>
                     <strong className="flex justify-between font-extrabold mt-3">
-                      <span className="text-2xl">{day.name}</span>
+                      <span className="text-2xl">{day.id} - {day.name}</span>
                       <div>
                         <CheckBox onChange={() => handleDAYcheckBox(day.id)} checked={dayID.includes(day.id)} />
                       </div>
@@ -621,7 +641,7 @@ const CoachAddExercise = ({ plan_id }) => {
               </div>
 
               <div className="pl-8">
-                <NumSlider Label="Reps" value={reps} onChange={setReps} />
+                <NumSlider Label="Reps" value={reps} onChange={setReps} maxLength='12'/>
               </div>
 
               <div>
