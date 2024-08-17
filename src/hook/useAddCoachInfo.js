@@ -12,8 +12,8 @@ export const useAddCoachInfo = () => {
 
     return useMutation(CoachRegister , {
         onSuccess: (data) =>{
-            const coachID = data.data.coach.id
-            setStorCoachID(coachID)
+            // const coachID = data.data.coach.id
+            // setStorCoachID(coachID)
             console.log(data.data.coach.id)
             queryClient.invalidateQueries('coach-info');
             toast.success('Coach Info Added Successfuly')

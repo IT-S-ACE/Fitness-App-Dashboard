@@ -29,7 +29,7 @@ const CoachCard = () => {
                 <div className="ccccontainer" >
                     {data?.coach.map((coach) => {
                         return <div className="custom-card" key={coach.id}>
-                            <div className="img-box"><img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${coach.image}`} /></div>
+                            <div className="img-box"><img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${coach.image}`} /></div>
                             <div className="custom-content">
                                 <h2>{coach.name}</h2>
                                 {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, hic? Magnam eum error saepe doloribus corrupti repellat quisquam alias doloremque!</p>

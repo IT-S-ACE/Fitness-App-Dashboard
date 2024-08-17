@@ -143,22 +143,25 @@ const CoachService = () => {
                                             <th className='px-4 py-2 border-b-2 border-gray-300'>Name</th>
                                             <th className='px-4 py-2 border-b-2 border-gray-300'>Goal</th>
                                             <th className='px-4 py-2 border-b-2 border-gray-300'>Start Date</th>
-                                            <th className='px-4 py-2 border-b-2 border-gray-300'>Action</th>
+                                            <th className='px-4 py-2 border-b-2 border-gray-300'>End Date</th>
+                                            <th className='px-4 py-2 border-b-2 border-gray-300'>Notify user</th>
                                             {/* <th className='px-4 py-2 border-b-2 border-gray-300'>End Date</th> */}
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {allTrainers?.map((trainer) => {
-                                            const created_at = new Date(trainer.user.created_at).toLocaleDateString()
+                                            const created_at = new Date(trainer.start_date).toLocaleDateString()
+                                            const end_at = new Date(trainer.end_at).toLocaleDateString()
                                             return <>
                                                 <tr key={trainer.id} className='hover:bg-gray-100'>
                                                     <th className='px-4 py-2 border-b'>{trainer.user.id}</th>
                                                     <th className='px-4 py-2 border-b'>
-                                                        <img src={profile} alt="Article" className='w-14 h-14' />
+                                                        <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${trainer.user.image}`} alt="Article" className='w-14 h-14' />
                                                     </th>
                                                     <th className='px-4 py-2 border-b'>{trainer.user.name}</th>
                                                     <th className='px-4 py-2 border-b'>{trainer.user.target}</th>
                                                     <th className='px-4 py-2 border-b'>{created_at}</th>
+                                                    <th className='px-4 py-2 border-b'>{end_at}</th>
                                                     <th className='px-4 py-2 border-b'>
                                                         <a href="#MealDelete" className="no-underline text-blue-600"
                                                             onClick={() => handleSendNotification(trainer.user_id)}

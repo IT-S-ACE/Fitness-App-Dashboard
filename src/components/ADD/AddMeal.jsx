@@ -186,7 +186,7 @@
 //                                             <div key={ing.id} className="bg-gray-500 border-1 border-black overflow-hidden w-auto rounded-xl m-3 card-effect hover:cursor-pointer h-64"
 //                                             onClick={() => handleCheckboxChange(ing.id)}>
 //                                                 <div className="">
-//                                                     <img className='h-48 w-48' src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${ing.image}`} alt="Minecraft" />
+//                                                     <img className='h-48 w-48' src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${ing.image}`} alt="Minecraft" />
 //                                                 </div>
 //                                                 <div className=" px-5">
 //                                                     <strong className="flex justify-between font-extrabold mt-3">
@@ -404,7 +404,7 @@ const AddMeal = () => {
                                             <div key={ing.id} className="bg-gray-500 border-1 border-black overflow-hidden w-auto rounded-xl m-3 card-effect hover:cursor-pointer h-64"
                                                 onClick={() => handleCheckboxChange(ing.id)}>
                                                 <div className="">
-                                                    <img className='h-48 w-48' src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${ing.image}`} alt={ing.name} />
+                                                    <img className='h-48 w-48' src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${ing.image}`} alt={ing.name} />
                                                 </div>
                                                 <div className=" px-5">
                                                     <strong className="flex justify-between font-extrabold mt-3">

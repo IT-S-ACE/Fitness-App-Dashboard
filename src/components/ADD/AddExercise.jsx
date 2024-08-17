@@ -221,7 +221,7 @@ const AddExercise = () => {
                 {allCategory?.data?.map((categ) => (
                   <div key={categ.id} className="px-5 cursor-pointer flex justify-between border-2 border-gray-500 rounded-xl m-2 bg-gray-300" onClick={() => handleCATEGORYCheckbox(categ.id)}>
                     <div className='flex font-extrabold my-2'>
-                      <img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${categ.image}`} alt="Category" className='w-10 h-10 rounded-full'/>
+                      <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${categ.image}`} alt="Category" className='w-10 h-10 rounded-full'/>
                       <span className="ml-2 text-xl">{categ.category_name}</span>
                     </div>
                     <strong className="mt-3">

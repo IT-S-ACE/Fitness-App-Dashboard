@@ -89,6 +89,7 @@ const AddArticle = () => {
                         <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start'>
                             Add Article
                         </h1>
+                        
                     </div>
                     <div className='mt-6 grid grid-cols-2 gap-4'>   
 

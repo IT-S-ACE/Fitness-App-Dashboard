@@ -20,7 +20,7 @@ const ProductCard = () => {
                 <div key={product.id} className="cccontainerrr">
                     <div className="ccardd">
                         <div className="imgbox">
-                            <img className="iimageeee" src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${product.image}`} alt={product.name} />
+                            <img className="iimageeee" src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${product.image}`} alt={product.name} />
                         </div>
                         <div className="contentbox">
                             <h2>{product.id} -{product.name}</h2>

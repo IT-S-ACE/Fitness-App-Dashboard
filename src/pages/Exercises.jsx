@@ -35,7 +35,7 @@ const Exercises = () => {
             {allExercise?.map((exercise) => {
               return <>
                 <div key={exercise.id} className='border-2 border-black rounded-xl flex'>
-                  <img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${exercise.gif}`} alt="Exercise" className='w-48 h-48 m-4 border-1 border-gray-500 rounded-xl ' />
+                  <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${exercise.gif}`} alt="Exercise" className='w-48 h-48 m-4 border-1 border-gray-500 rounded-xl ' />
                   <div className='flex justify-between'>
                     <a href="#MealDelete" className="no-underline text-blue-600"
                       // onClick={() => console.log(`Meal ID: ${exercise.id}`)}

@@ -91,7 +91,7 @@ const Meal = () => {
                         return <>
                             <div key={ing.id} className="bg-black border-1 border-black min-h-56 min-w-52 overflow-hidden w-80 rounded-xl m-5 card-effect">
                                 <div className="">
-                                    <img className='w-full h-52 ' src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${ing.image}`} alt="Minecraft" />
+                                    <img className='w-full h-52 ' src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${ing.image}`} alt="Minecraft" />
                                 </div>
                                 <div className="p-4">
                                     <p className="text-sm text-white">Ingredient</p>
@@ -126,7 +126,7 @@ const Meal = () => {
                         return <>
                             <div key={meal.id} className="bg-black border-1 border-black min-h-56 w-64 overflow-hidden rounded-xl m-5 card-effect">
                                 <div className="">
-                                    <img className='w-full h-52' src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${meal.image}`} alt="Minecraft" />
+                                    <img className='w-full h-52' src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${meal.image}`} alt="Minecraft" />
                                 </div>
                                 <div className="p-4">
                                     <strong className="flex justify-between font-extrabold mt-3">
@@ -155,7 +155,7 @@ const Meal = () => {
                                             {meal.ingredients.map((imag) => {
                                                 return (
                                                     <>
-                                                        <img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
+                                                        <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
                                                     </>
                                                 )
                                             })}

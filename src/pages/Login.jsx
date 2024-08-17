@@ -27,8 +27,7 @@ function handelclick() {
 
 function Login() {
     //useContext [TOKEN]
-    const {adminToken , setAdminToken , setToken} = useStateContext();
-
+    const {adminToken , setAdminToken , setToken , setStorCoachID } = useStateContext();
     // hooks for admin login
     const [phone_number, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
@@ -47,7 +46,9 @@ function Login() {
             QueryClient.invalidateQueries("coachLogin")
             toast.success("Login Successfully")
             console.log(data.data.user.price)
-            if(data.data.user.price != 0){
+            const coachID = data.data.user.id
+            setStorCoachID(coachID)
+            if(data.data.user.price != null){
                 navigate('/Coach')
             }else{
                 navigate("/introduction")

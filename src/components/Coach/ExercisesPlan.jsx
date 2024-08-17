@@ -40,7 +40,7 @@ const ExercisesPlan = () => {
             {data?.data?.map((exercise) => {
               return <>
                 <div key={exercise.id} className='border-2 border-black rounded-xl flex'>
-                  <img src={`https://48c4-146-70-246-155.ngrok-free.app/Uploads/${exercise.gif}`} alt="Exercise" className='w-48 h-48 m-4 border-1 border-gray-500 rounded-xl ' />
+                  <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${exercise.gif}`} alt="Exercise" className='w-48 h-48 m-4 border-1 border-gray-500 rounded-xl ' />
                   <div className='grid grid-cols-2'>
                     <div className='mt-8 border-r-1 ml-1 border-gray-600 h-40 mr-8'>
                       <p className='text-xl mb-5'><span className='font-extrabold'> Name : </span> {exercise.exercise_name}</p>

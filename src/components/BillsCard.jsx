@@ -11,9 +11,11 @@ const BillsCard = () => {
         setActiveCardId(activeCardId === billId ? null : billId);
     };
 
+
     return (
         <>
         {allBills?.data?.map((bill) => {
+    const created_at = new Date(bill.created_at).toLocaleDateString()
             const isActive = activeCardId === bill.id; // Check if this card is active
             return <>
             <div
@@ -65,14 +67,14 @@ const BillsCard = () => {
                     <div id="firstBehindDisplay">
                         <div id="firstBehindRow">
                             <div id="detail">
-                            <p className='flex justify-center'> {bill.InvoiceId} </p>
+                            <p className='flex justify-center'> {bill.InvoiceId == null ? 0 : bill.InvoiceId}</p>
                                 <div id="detailLabel">InvoiceId</div>
                             </div>
                         </div>
 
                         <div id="firstBehindRow">
                             <div id="detail">
-                            {/* <p className='flex justify-center'> {Date(bill.created_at).toLocaleDateString()} </p> */}
+                            <p className='flex justify-center'> {created_at} </p>
                                 <div id="detailLabel">Created At</div>
                             </div>
                         </div>
@@ -80,7 +82,7 @@ const BillsCard = () => {
                         <div id="firstBehindRow">
 
                             <div id="detail">
-                            <p className='flex justify-center'> No </p>
+                            <p className='flex justify-center'> {bill.RefundId == null ? 0 : bill.RefundId} </p>
                                 <div id="detailLabel">RefundId</div>
                             </div>
                         </div>
@@ -98,7 +100,7 @@ const BillsCard = () => {
                         <div id="secondBehind">
                             <div id="secondBehindDisplay">
                                 <div className='flex justify-between'>
-                                <p className='font-extrabold'>Order Date : </p><p className='tracking-wide'>02:43 PM 13 August 2024</p>
+                                <p className='font-extrabold'>Order Date : </p><p className='tracking-wide'>{bill.billable.order_date}</p>
                                 </div>
                                 
                             </div>
