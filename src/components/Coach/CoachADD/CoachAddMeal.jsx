@@ -8,6 +8,7 @@ import { TextField } from '@mui/material'
 import { useCoachAllingredientsData } from '../../../hook/Coach/useCoachAllingredientsData'
 import { useCoachAddMeal } from '../../../hook/Coach/useCoachAddMeal'
 import { useStateContext } from '../../../contexts/ContextProvider'
+import { ExitToApp } from '@mui/icons-material'
 
 const mealCategory = [
     { id: 1, name: 'breakfast' },
@@ -40,7 +41,7 @@ const allDays = [
 
 
 
-const CoachAddMeal = () => {
+const CoachAddMeal = ({handleCloseModal}) => {
 
     // Meal Info
     const [mealName, setMealName] = useState('')
@@ -128,13 +129,19 @@ const CoachAddMeal = () => {
         <>
             <div className='px-4 -mt-28 flex'>
                 <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl drop-shadow-2xl backdrop-filter bg-opacity-95 '>
-                    <div className='mb-5 border-b-1 border-gray-300 w-40 '>
-                        <p className='text-gray-400 flex'>
-                            Form
-                        </p>
-                        <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start'>
-                            Add Meal
-                        </h1>
+
+                    <div className='flex justify-between'>
+                        <div className='mb-5 border-b-1 border-gray-300 w-40 '>
+                            <p className='text-gray-400 flex'>
+                                Form
+                            </p>
+                            <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start'>
+                                Add Meal
+                            </h1>
+                        </div>
+                        <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
+                            <ExitToApp />
+                        </button>
                     </div>
                     {/* <div className='flex '> */}
                     <div className="mt-2 grid grid-cols-2 gap-1">

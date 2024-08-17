@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { useAddNewType } from '../../hook/useAddNewType'
 import { TextField } from '@mui/material'
 import DargDrop from '../DargDrop'
+import { ExitToApp } from '@mui/icons-material'
 
-const AddType = () => {
+const AddType = ({handleCloseModal}) => {
     const [name, setName] =useState('')
     const [description, setDescription] =useState('')
     const [image , setImage] = useState(null)
@@ -24,14 +25,20 @@ const AddType = () => {
         <>
             <div className='px-4   -mt-16 flex'>
                 <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl drop-shadow-2xl backdrop-filter bg-opacity-95'>
+                    
+                    <div className='flex justify-between'>
                     <div className='mb-10'>
                         <p className='text-gray-400 flex'>
                             Form
                         </p>
                         <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start'>
-                            Add Ingredient
+                            Add Type
                         </h1>
                     </div>
+                        <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
+                            <ExitToApp />
+                        </button>
+                        </div>
                     <div className='mt-6'>
 
                         <div>

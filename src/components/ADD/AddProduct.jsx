@@ -6,6 +6,7 @@ import NumSlider from '../NumSlider';
 import DropDown from '../DropDown';
 import DargDrop from '../DargDrop';
 import CheckBox from '../CheckBox';
+import { ExitToApp } from '@mui/icons-material';
 // 2 textfield
 // 1 numSlider
 
@@ -42,7 +43,7 @@ const allMeasuringUnit = [ // dropdown
     { id: 5, name: 'km' },
 ]
 
-const AddProduct = () => {
+const AddProduct = ({handleCloseModal}) => {
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
@@ -118,12 +119,18 @@ const AddProduct = () => {
         <>
             <div className="px-4 -mt-16 flex">
                 <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl drop-shadow-2xl backdrop-filter bg-opacity-95">
+                    
+                    <div className='flex justify-between'>
                     <div className="mb-5 border-b-1 border-gray-300 w-96">
                         <p className="text-gray-400 flex">Form</p>
                         <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start">
                             Add Food
                         </h1>
                     </div>
+                        <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
+                            <ExitToApp />
+                        </button>
+                        </div>
                     <div className="mt-2 grid grid-cols-2 gap-1">
                         <div className="grid grid-cols-2 gap-1 mr-2 border-r-2 pr-2 border-black">
                             <div className="mr-1">

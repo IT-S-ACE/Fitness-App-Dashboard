@@ -18,70 +18,70 @@ import calves from '../../assets/focusArea/003-muscles.png';
 import back from '../../assets/focusArea/012-back-4.png';
 import CheckBox from '../CheckBox';
 import { useAllCategoryData } from '../../hook/useAllCategoryData';
+import { ExitToApp } from '@mui/icons-material';
 
 
 const allFocusArea = [
-    { id: 1, name: 'abs', image: abs },
-    { id: 2, name: 'chest', image: chest },
-    { id: 3, name: 'shoulder', image: shoulder },
-    { id: 4, name: 'biceps', image: biceps },
-    { id: 5, name: 'triceps', image: triceps },
-    { id: 6, name: 'quadriceps', image: quadriceps },
-    { id: 7, name: 'hamstring', image: hamstring },
-    { id: 8, name: 'glutes', image: glutes },
-    { id: 9, name: 'calves', image: calves },
-    { id: 10, name: 'back', image: back },
-  ];
-  
-  const allMuscleArea = [
-    { id: 1, name: 'CHEST' },
-    { id: 2, name: 'ARM' },
-    { id: 3, name: 'LEG' },
-    { id: 4, name: 'ABS' },
-    { id: 5, name: 'SHOULDER&Back' },
-  ];
-  
-  const allTarget = [
-    { id: 1, name: 'lose_weight' },
-    { id: 2, name: 'build_muscle' },
-    { id: 3, name: 'keep_fit' },
-  ];
-  
-  const allLevel = [
-    { id: 1, name: 'beginner' },
-    { id: 2, name: 'intermediate' },
-    { id: 3, name: 'advanced' },
-  ];
-  
-  const allEquipment = [
-    { id: 1, name: 'equipment' },
-    { id: 2, name: 'no_equipment' },
-  ];
-  
-  const allDiseases = [
-    { id: 1, name: 'heart' },
-    { id: 2, name: 'knee' },
-    { id: 3, name: 'breath' },
-    { id: 4, name: 'blood pressure' },
-    { id: 5, name: 'diabetes' },
-  ];
-  
-  const allGenders = [
-    { id: 1, name: 'male' },
-    { id: 2, name: 'female' },
-  ];
-  
-  const allDays = [
-    { id: 1, name: 'Sunday' },
-    { id: 2, name: 'Monday' },
-    { id: 3, name: 'Tuesday' },
-    { id: 4, name: 'Wednesday' },
-    { id: 5, name: 'Thursday' },
-    { id: 6, name: 'Friday' },
-    { id: 7, name: 'Saturday' },
-  ];
+  { id: 1, name: 'abs', image: abs },
+  { id: 2, name: 'chest', image: chest },
+  { id: 3, name: 'shoulder', image: shoulder },
+  { id: 4, name: 'biceps', image: biceps },
+  { id: 5, name: 'triceps', image: triceps },
+  { id: 6, name: 'quadriceps', image: quadriceps },
+  { id: 7, name: 'hamstring', image: hamstring },
+  { id: 8, name: 'glutes', image: glutes },
+  { id: 9, name: 'calves', image: calves },
+  { id: 10, name: 'back', image: back },
+];
 
-const AddExercise = () => {
+const allMuscleArea = [
+  { id: 1, name: 'CHEST' },
+  { id: 2, name: 'ARM' },
+  { id: 3, name: 'LEG' },
+  { id: 4, name: 'ABS' },
+  { id: 5, name: 'SHOULDER&Back' },
+];
+
+const allTarget = [
+  { id: 1, name: 'lose_weight' },
+  { id: 2, name: 'build_muscle' },
+  { id: 3, name: 'keep_fit' },
+];
+
+const allLevel = [
+  { id: 1, name: 'beginner' },
+  { id: 2, name: 'intermediate' },
+  { id: 3, name: 'advanced' },
+];
+
+const allEquipment = [
+  { id: 1, name: 'equipment' },
+  { id: 2, name: 'no_equipment' },
+];
+
+const allDiseases = [
+  { id: 1, name: 'heart' },
+  { id: 2, name: 'knee' },
+  { id: 3, name: 'breath' },
+  { id: 4, name: 'none' },
+];
+
+const allGenders = [
+  { id: 1, name: 'male' },
+  { id: 2, name: 'female' },
+];
+
+const allDays = [
+  { id: 1, name: 'Sunday' },
+  { id: 2, name: 'Monday' },
+  { id: 3, name: 'Tuesday' },
+  { id: 4, name: 'Wednesday' },
+  { id: 5, name: 'Thursday' },
+  { id: 6, name: 'Friday' },
+  { id: 7, name: 'Saturday' },
+];
+
+const AddExercise = ({ handleCloseModal }) => {
   const [name, setName] = useState('');
   const [muscle, setMuscle] = useState('');
   const [description, setDescription] = useState('');
@@ -155,17 +155,23 @@ const AddExercise = () => {
   };
 
 
-  const {data : allCategory} = useAllCategoryData()
+  const { data: allCategory } = useAllCategoryData()
 
   return (
     <>
       <div className="px-4 -mt-24 flex">
         <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl drop-shadow-2xl backdrop-filter bg-opacity-95">
-          <div className="mb-5 border-b-1 border-gray-300 w-48">
-            <p className="text-gray-400 flex">Form</p>
-            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start">
-              Add Exercise
-            </h1>
+
+          <div className='flex justify-between'>
+            <div className="mb-5 border-b-1 border-gray-300 w-48">
+              <p className="text-gray-400 flex">Form</p>
+              <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start">
+                Add Exercise
+              </h1>
+            </div>
+            <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
+                            <ExitToApp />
+                        </button>
           </div>
           <div className="mt-2 grid grid-cols-2 gap-1">
             <div className="grid grid-cols-2 gap-1 mr-2 border-r-2 pr-2 border-black">
@@ -211,7 +217,7 @@ const AddExercise = () => {
                 </div>
               </div>
               <div className="pl-8">
-                <NumSlider Label="Reps" value={reps} onChange={setReps} maxLength='12'/>
+                <NumSlider Label="Reps" value={reps} onChange={setReps} maxLength='12' />
               </div>
 
               <div>
@@ -221,7 +227,7 @@ const AddExercise = () => {
                 {allCategory?.data?.map((categ) => (
                   <div key={categ.id} className="px-5 cursor-pointer flex justify-between border-2 border-gray-500 rounded-xl m-2 bg-gray-300" onClick={() => handleCATEGORYCheckbox(categ.id)}>
                     <div className='flex font-extrabold my-2'>
-                      <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${categ.image}`} alt="Category" className='w-10 h-10 rounded-full'/>
+                      <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${categ.image}`} alt="Category" className='w-10 h-10 rounded-full' />
                       <span className="ml-2 text-xl">{categ.category_name}</span>
                     </div>
                     <strong className="mt-3">

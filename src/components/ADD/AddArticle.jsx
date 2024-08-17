@@ -5,8 +5,9 @@ import aritcleLogo from '../../assets/image.png'
 import Button from '../Button'
 import Header from '../Header'
 import TextFeildUi from '../TextFeildUi'
+import { ExitToApp } from '@mui/icons-material'
 
-const AddArticle = () => {
+const AddArticle = ({handleCloseModal}) => {
     const [image, setImage] = useState(null)
     return (
         <>
@@ -82,15 +83,19 @@ const AddArticle = () => {
 
             {/* sytle 2 */}
             <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl drop-shadow-2xl backdrop-filter bg-opacity-95'>
-                    <div className='mb-10'>
-                        <p className='text-gray-400 flex'>
-                            Form
-                        </p>
-                        <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start'>
-                            Add Article
-                        </h1>
-                        
-                    </div>
+            <div className='flex justify-between'>
+                        <div className='mb-10'>
+                            <p className='text-gray-400 flex'>
+                                Form
+                            </p>
+                            <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start'>
+                                Add Ingredient
+                            </h1>
+                        </div>
+                        <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
+                            <ExitToApp />
+                        </button>
+                        </div>
                     <div className='mt-6 grid grid-cols-2 gap-4'>   
 
                         <div>

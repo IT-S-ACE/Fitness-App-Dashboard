@@ -234,6 +234,7 @@ import IngredintImg from '../../assets/profile.png'
 import { useAllIngredientsData } from '../../hook/useAllIngredientsData'
 import DropDown from '../DropDown'
 import { useAddMeal } from '../../hook/useAddMeal'
+import { ExitToApp } from '@mui/icons-material'
 
 const mealCategory = [
     { id: 1, name: 'breakfast' },
@@ -254,7 +255,7 @@ const mealType = [
     { id: 3, name: 'none' },
 ]
 
-const AddMeal = () => {
+const AddMeal = ({handleCloseModal}) => {
 
     // Meal Info
     const [mealName, setMealName] = useState('')
@@ -312,6 +313,8 @@ const AddMeal = () => {
         <>
             <div className='px-4 -mt-24 flex'>
                 <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl drop-shadow-2xl backdrop-filter bg-opacity-95 '>
+                    
+                    <div className='flex justify-between'>
                     <div className='mb-5 border-b-1 border-gray-300 w-40 '>
                         <p className='text-gray-400 flex'>
                             Form
@@ -320,6 +323,10 @@ const AddMeal = () => {
                             Add Meal
                         </h1>
                     </div>
+                        <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
+                            <ExitToApp />
+                        </button>
+                        </div>
                     <div className='flex '>
                         <div className='mt-2 grid grid-cols-2 gap-1 mr-2 border-r-2 pr-2 border-black'>
                             <div >

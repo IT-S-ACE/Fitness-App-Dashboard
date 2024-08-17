@@ -360,6 +360,7 @@ import back from '../../../assets/focusArea/012-back-4.png';
 import DropDownID from '../../DropDownID';
 import { useQueryClient } from 'react-query';
 import toast from 'react-hot-toast';
+import { ExitToApp } from '@mui/icons-material';
 
 const allFocusArea = [
   { id: 1, name: 'abs', image: abs },
@@ -442,7 +443,7 @@ const allDays = [
   { id: 28, name: 'Saturday' },
 ];
 
-const CoachAddExercise = ({ plan_id }) => {
+const CoachAddExercise = ({ plan_id, handleCloseModal }) => {
   const [name, setName] = useState('');
   const [muscle, setMuscle] = useState('');
   const [description, setDescription] = useState('');
@@ -535,11 +536,17 @@ const CoachAddExercise = ({ plan_id }) => {
     <>
       <div className="px-4 -mt-24 flex">
         <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl drop-shadow-2xl backdrop-filter bg-opacity-95">
-          <div className="mb-5 border-b-1 border-gray-300 w-48">
-            <p className="text-gray-400 flex">Form</p>
-            <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start">
-              Add Exercise
-            </h1>
+
+          <div className='flex justify-between'>
+            <div className="mb-5 border-b-1 border-gray-300 w-48">
+              <p className="text-gray-400 flex">Form</p>
+              <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start">
+                Add Exercise
+              </h1>
+            </div>
+            <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
+              <ExitToApp />
+            </button>
           </div>
           <div className="mt-2 grid grid-cols-2 gap-1">
             <div className="grid grid-cols-2 gap-1 mr-2 border-r-2 pr-2 border-black">
@@ -641,7 +648,7 @@ const CoachAddExercise = ({ plan_id }) => {
               </div>
 
               <div className="pl-8">
-                <NumSlider Label="Reps" value={reps} onChange={setReps} maxLength='12'/>
+                <NumSlider Label="Reps" value={reps} onChange={setReps} maxLength='12' />
               </div>
 
               <div>

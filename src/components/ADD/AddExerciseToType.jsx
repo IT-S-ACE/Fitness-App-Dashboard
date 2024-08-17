@@ -19,6 +19,7 @@ import CheckBox from '../CheckBox';
 import { useAllCategoryData } from '../../hook/useAllCategoryData';
 import { useAddNewExerciseToType } from '../../hook/useAddNewExerciseToType';
 import { useAllTypeData } from '../../hook/useAllTypeData';
+import { ExitToApp } from '@mui/icons-material';
 
 
 const allFocusArea = [
@@ -63,9 +64,8 @@ const allDiseases = [
     { id: 1, name: 'heart' },
     { id: 2, name: 'knee' },
     { id: 3, name: 'breath' },
-    { id: 4, name: 'blood pressure' },
-    { id: 5, name: 'diabetes' },
-];
+    { id: 4, name: 'none' },
+  ];
 
 const allGenders = [
     { id: 1, name: 'male' },
@@ -82,7 +82,7 @@ const allDays = [
     { id: 7, name: 'Saturday' },
 ];
 
-const AddExerciseToType = () => {
+const AddExerciseToType = ({handleCloseModal}) => {
     const [name, setName] = useState('');
     const [muscle, setMuscle] = useState('');
     const [description, setDescription] = useState('');
@@ -168,12 +168,18 @@ const AddExerciseToType = () => {
         <>
             <div className="px-4 -mt-24 flex">
                 <div className="m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl drop-shadow-2xl backdrop-filter bg-opacity-95">
+                    
+                    <div className='flex justify-between'>
                     <div className="mb-5 border-b-1 border-gray-300 w-96">
                         <p className="text-gray-400 flex">Form</p>
                         <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start">
                             Add Exercise To Type
                         </h1>
                     </div>
+                        <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
+                            <ExitToApp />
+                        </button>
+                        </div>
                     <div className="mt-2 grid grid-cols-2 gap-1">
                         <div className="grid grid-cols-2 gap-1 mr-2 border-r-2 pr-2 border-black">
                             <div className="mr-1">

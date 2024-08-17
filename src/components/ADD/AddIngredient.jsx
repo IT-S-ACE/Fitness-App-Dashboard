@@ -3,8 +3,9 @@ import React, { useState } from 'react'
 import DargDrop from '../DargDrop'
 import { useAddIngredient } from '../../hook/useAddIngredient'
 import { Toaster } from 'react-hot-toast'
+import { ExitToApp } from '@mui/icons-material'
 
-const AddIngredient = () => {
+const AddIngredient = ({handleCloseModal}) => {
     const [name, setName] =useState('')
     const [image , setImage] = useState(null)
 
@@ -23,6 +24,8 @@ const AddIngredient = () => {
         <>
             <div className='px-4   -mt-16 flex'>
                 <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl drop-shadow-2xl backdrop-filter bg-opacity-95'>
+                    
+                    <div className='flex justify-between'>
                     <div className='mb-10'>
                         <p className='text-gray-400 flex'>
                             Form
@@ -31,6 +34,10 @@ const AddIngredient = () => {
                             Add Ingredient
                         </h1>
                     </div>
+                        <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
+                            <ExitToApp />
+                        </button>
+                        </div>
                     <div className='mt-6'>
 
                         <div>

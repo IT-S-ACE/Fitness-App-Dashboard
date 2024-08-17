@@ -256,7 +256,7 @@ allLinks.forEach((elem) => {
     </div>
 
     <div className="sidebar-links bottom-links">
-      <h2>Settings</h2>
+      <h2>Subs</h2>
       <ul>
         <li>
           <NavLink to='/meal'>
