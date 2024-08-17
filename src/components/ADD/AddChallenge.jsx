@@ -39,7 +39,7 @@ const AddChallenge = ({handleCloseModal}) => {
                                 Form
                             </p>
                             <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start'>
-                                Add Ingredient
+                                Add Challenge
                             </h1>
                         </div>
                         <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}
@@ -54,7 +54,7 @@ const AddChallenge = ({handleCloseModal}) => {
                 <TextField
                   className='input-body-row1-textfeild1-TextFeild'
                   margin="dense"
-                  label="Category Name"
+                  label="Challenge Name"
                   type="text"
                   fullWidth
                   variant="outlined"

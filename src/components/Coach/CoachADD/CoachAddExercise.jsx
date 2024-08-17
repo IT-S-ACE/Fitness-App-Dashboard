@@ -462,16 +462,16 @@ const CoachAddExercise = ({ plan_id, handleCloseModal }) => {
   const { mutate: addExercisePlan } = useCoachAddExercisePlan({
     onSuccess: () => {
       setName('');
-      setMuscle('');
+      // setMuscle('');
       setDescription('');
       setCalories(0);
       setTime('');
       setReps(0);
       setVideoLink('');
-      setGif(null);
-      setGender('');
+      // setGif(null);
+      // setGender('');
       setDayID([]);
-      setDiseases('');
+      // setDiseases('');
       setFocusArea([]);
       setPlanID('');
     },

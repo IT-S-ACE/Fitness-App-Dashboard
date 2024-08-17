@@ -71,7 +71,7 @@ const CoachProjects = () => {
                                         <div className="ccccontainer" >
                                             {plans?.data?.map((plan) => {
                                                 return <div className="custom-card" key={plan.id}>
-                                                    {/* <div className="img-box"><img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${plan.image}`} /></div> */}
+                                                    {/* <div className="img-box"><img src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${plan.image}`} /></div> */}
                                                     <div className="img-box"><img src={planImage} alt='plan' /></div>
                                                     <div className="custom-content">
                                                         <h2>{plan.plan_name}</h2>

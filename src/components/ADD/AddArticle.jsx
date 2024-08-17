@@ -89,7 +89,7 @@ const AddArticle = ({handleCloseModal}) => {
                                 Form
                             </p>
                             <h1 className='text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start'>
-                                Add Ingredient
+                                Add Article
                             </h1>
                         </div>
                         <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}

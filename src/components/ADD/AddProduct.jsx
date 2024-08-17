@@ -124,7 +124,7 @@ const AddProduct = ({handleCloseModal}) => {
                     <div className="mb-5 border-b-1 border-gray-300 w-96">
                         <p className="text-gray-400 flex">Form</p>
                         <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 flex justify-start">
-                            Add Food
+                            Add Product
                         </h1>
                     </div>
                         <button onClick={handleCloseModal}>  {/* Trigger handleCloseModal on click */}

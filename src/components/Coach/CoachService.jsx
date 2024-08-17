@@ -156,7 +156,7 @@ const CoachService = () => {
                                                 <tr key={trainer.id} className='hover:bg-gray-100'>
                                                     <th className='px-4 py-2 border-b'>{trainer.user.id}</th>
                                                     <th className='px-4 py-2 border-b'>
-                                                        <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${trainer.user.image}`} alt="Article" className='w-14 h-14' />
+                                                        <img src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${trainer.user.image}`} alt="Article" className='w-14 h-14' />
                                                     </th>
                                                     <th className='px-4 py-2 border-b'>{trainer.user.name}</th>
                                                     <th className='px-4 py-2 border-b'>{trainer.user.target}</th>

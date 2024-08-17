@@ -137,11 +137,11 @@ const AddFood = ({ handleCloseModal }) => {
                     <div className="mt-2 grid grid-cols-2 gap-1">
                         <div className="grid grid-cols-2 gap-1 mr-2 border-r-2 pr-2 border-black">
                             <div className="mr-1">
-                                <p className="flex">Product Name :</p>
+                                <p className="flex">Food Name :</p>
                                 <TextField
                                     className="input-body-row1-textfeild1-TextFeild"
                                     margin="dense"
-                                    label="Product Name"
+                                    label="Food Name"
                                     type="text"
                                     required
                                     fullWidth

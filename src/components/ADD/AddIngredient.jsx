@@ -45,7 +45,7 @@ const AddIngredient = ({handleCloseModal}) => {
                             <TextField
                                 className='input-body-row1-textfeild1-TextFeild'
                                 margin="dense"
-                                label="Challenge Name"
+                                label="Ingredient Name"
                                 type="text"
                                 fullWidth
                                 variant="outlined"

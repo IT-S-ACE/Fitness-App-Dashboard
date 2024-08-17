@@ -47,7 +47,7 @@ const CoachContacts = () => {
             <div className='m-10 p-10 border-1 border-gray-300 rounded-3xl w-600 shadow-xl h-135'>
                 <div className='flex justify-between items-center'>
                     <Header category="SubPage" title='Ingredients' />
-                    <Modal buttonContent={<div className='w-40 flex justify-between items-center'><BiPlus className='scale-125' /><span>Add Ingredient</span></div>} numStyle='two'>
+                    <Modal buttonContent={<div className='w-40 flex justify-between items-center'><BiPlus className='scale-125' /><span>Add Ingredient</span></div>} numStyle='one'>
                         <CoachAddIngredient />
                     </Modal>
                 </div>
@@ -62,7 +62,7 @@ const CoachContacts = () => {
                             viewport={{ once: true, amount: 0.3 }}
                         >
                             <div className="">
-                                <img className='w-full h-52' src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${ing.image}`} alt={ing.name} />
+                                <img className='w-full h-52' src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${ing.image}`} alt={ing.name} />
                             </div>
                             <div className="p-4">
                                 <p className="text-sm text-white">Ingredient</p>
@@ -86,7 +86,7 @@ const CoachContacts = () => {
             <div className='ml-4 p-10 border-1 border-gray-300 rounded-3xl w-1000 h-600 shadow-xl'>
                 <div className='flex justify-between items-center'>
                     <Header category="Page" title='Meals' />
-                    <Modal buttonContent={<div className='w-28 flex justify-between items-center'><BiPlus className='scale-125' /><span>Add Meal</span></div>} numStyle='five'>
+                    <Modal buttonContent={<div className='w-28 flex justify-between items-center'><BiPlus className='scale-125' /><span>Add Meal</span></div>} numStyle='one'>
                         <CoachAddMeal />
                     </Modal>
                 </div>
@@ -101,7 +101,7 @@ const CoachContacts = () => {
                             viewport={{ once: true, amount: 0.3 }}
                         >
                             <div className="">
-                                <img className='w-full h-52' src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${meal.image}`} alt={meal.name} />
+                                <img className='w-full h-52' src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${meal.image}`} alt={meal.name} />
                             </div>
                             <div className="p-4">
                                 <strong className="flex justify-between font-extrabold mt-3">
@@ -127,7 +127,7 @@ const CoachContacts = () => {
                                     <p className='flex'>Ingredient: </p>
                                     <div className='flex flex-wrap'>
                                         {meal.ingredients.map((imag) => (
-                                            <img key={imag.id} src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
+                                            <img key={imag.id} src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
                                         ))}
                                     </div>
                                     {/* <p className='my-2 flex justify-center items-center'>Salt: {meal.salt}</p> */}

@@ -68,19 +68,19 @@
 
 //                     <div className='flex justify-evenly'>
 //                         <div className='m-1' key={1}>
-//                             <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${categoryImages[0]}`} alt="" className='h-48 w-full bg-cover' />
+//                             <img src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${categoryImages[0]}`} alt="" className='h-48 w-full bg-cover' />
 //                             <Modal buttonContent={<div className='w-32 flex justify-between items-center'> <BiPlus className='scale-125'/> <span>Add Clothe</span></div>} numStyle='one'>
 //                                 <AddFood />
 //                             </Modal>
 //                         </div>
 //                         <div className='m-1 ' key={2}>
-//                             <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${categoryImages[1]}`} alt="" className='h-48 w-full bg-cover'/>
+//                             <img src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${categoryImages[1]}`} alt="" className='h-48 w-full bg-cover'/>
 //                             <Modal buttonContent={<div className='w-32 flex justify-between items-center'> <BiPlus className='scale-125'/> <span>Add Food</span></div>} numStyle='one'>
 //                                 <AddProduct />
 //                             </Modal>
 //                         </div>
 //                         <div className='m-1' key={3}> 
-//                             <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${categoryImages[2]}`} alt="" className='h-48 w-full bg-cover'/>
+//                             <img src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${categoryImages[2]}`} alt="" className='h-48 w-full bg-cover'/>
 //                             <Modal buttonContent={<div className='w-44 flex justify-between items-center'> <BiPlus className='scale-125'/> <span>Add Equipment</span></div>} numStyle='one'>
 //                                 <AddProduct />
 //                             </Modal>
@@ -191,7 +191,7 @@
 //                     <div className='flex justify-evenly'>
 //                         {categoryImages.map((src, index) => (
 //                             <div key={index} className='m-1'>
-//                                 <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${src}`} alt="" className='h-48 w-full bg-cover' />
+//                                 <img src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${src}`} alt="" className='h-48 w-full bg-cover' />
 //                                 <Modal buttonContent={
 //                                     <div className='w-32 flex justify-between items-center'>
 //                                         <BiPlus className='scale-125' />
@@ -283,19 +283,19 @@ const AddProductDialog = () => {
         <DialogContent>
           <div className='flex justify-evenly'>
             <div className='m-1' key={0}>
-              <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${categoryImages[0]}`} alt="" className='h-48 w-full bg-cover' />
+              <img src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${categoryImages[0]}`} alt="" className='h-48 w-full bg-cover' />
               <Modal buttonContent={<div className='w-32 flex justify-between items-center'><BiPlus className='scale-125' /> <span>Add Clothes</span></div>} numStyle='one'>
                 <AddClothes />
               </Modal>
             </div>
             <div className='m-1' key={1}>
-              <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${categoryImages[1]}`} alt="" className='h-48 w-full bg-cover' />
+              <img src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${categoryImages[1]}`} alt="" className='h-48 w-full bg-cover' />
               <Modal buttonContent={<div className='w-32 flex justify-between items-center'><BiPlus className='scale-125' /> <span>Add Food</span></div>} numStyle='one'>
                 <AddFood />
               </Modal>
             </div>
             <div className='m-1' key={2}>
-              <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${categoryImages[2]}`} alt="" className='h-48 w-full bg-cover' />
+              <img src={`https://142c-89-39-107-204.ngrok-free.app/Uploads/${categoryImages[2]}`} alt="" className='h-48 w-full bg-cover' />
               <Modal buttonContent={<div className='w-44 flex justify-between items-center'><BiPlus className='scale-125' /> <span>Add Equipment</span></div>} numStyle='one'>
                 <AddEquipment />
               </Modal>
