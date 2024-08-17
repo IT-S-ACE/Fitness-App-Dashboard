@@ -222,7 +222,7 @@ function Kanban() {
                   <tr key={article.id} className='hover:bg-gray-100'>
                   <th className='px-4 py-2 border-b'>{article.id}</th>
                   <th className='px-4 py-2 border-b'>
-                    <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${article.image}`} alt="Article" className='w-14 h-14 translate-x-20' />
+                    <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${article.image}`} alt="Article" className='w-14 h-14 translate-x-20' />
                   </th>
                   <th className='px-4 py-2 border-b'>{article.Author_Name}</th>
                   <th className='px-4 py-2 border-b'>{article.title}</th>

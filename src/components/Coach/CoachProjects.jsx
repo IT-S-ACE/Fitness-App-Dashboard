@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import projectImage from '../../assets/profile.png'
 import profile from '../../assets/profile.png'
+import planImage from '../../assets/fitness/man_back1.jpg'
 import Header from '../Header';
 import { ArrowBackRounded, ArrowRight, ArrowRightAltRounded } from '@mui/icons-material';
 import Modal from '../Modal';
@@ -10,6 +11,7 @@ import { useAllPlansData } from '../../hook/Coach/useAllPlansData';
 import { useAllExercisePlan } from '../../hook/Coach/useAllExercisePlan';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+
 
 const CoachProjects = () => {
 
@@ -69,8 +71,8 @@ const CoachProjects = () => {
                                         <div className="ccccontainer" >
                                             {plans?.data?.map((plan) => {
                                                 return <div className="custom-card" key={plan.id}>
-                                                    {/* <div className="img-box"><img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${plan.image}`} /></div> */}
-                                                    <div className="img-box"><img src={profile} alt='plan' /></div>
+                                                    {/* <div className="img-box"><img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${plan.image}`} /></div> */}
+                                                    <div className="img-box"><img src={planImage} alt='plan' /></div>
                                                     <div className="custom-content">
                                                         <h2>{plan.plan_name}</h2>
                                                         <div className="">

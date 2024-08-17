@@ -62,7 +62,7 @@ const CoachContacts = () => {
                             viewport={{ once: true, amount: 0.3 }}
                         >
                             <div className="">
-                                <img className='w-full h-52' src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${ing.image}`} alt={ing.name} />
+                                <img className='w-full h-52' src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${ing.image}`} alt={ing.name} />
                             </div>
                             <div className="p-4">
                                 <p className="text-sm text-white">Ingredient</p>
@@ -101,7 +101,7 @@ const CoachContacts = () => {
                             viewport={{ once: true, amount: 0.3 }}
                         >
                             <div className="">
-                                <img className='w-full h-52' src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${meal.image}`} alt={meal.name} />
+                                <img className='w-full h-52' src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${meal.image}`} alt={meal.name} />
                             </div>
                             <div className="p-4">
                                 <strong className="flex justify-between font-extrabold mt-3">
@@ -127,7 +127,7 @@ const CoachContacts = () => {
                                     <p className='flex'>Ingredient: </p>
                                     <div className='flex flex-wrap'>
                                         {meal.ingredients.map((imag) => (
-                                            <img key={imag.id} src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
+                                            <img key={imag.id} src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${imag.image}`} alt='' className='rounded-2xl w-5 h-5 m-1' />
                                         ))}
                                     </div>
                                     {/* <p className='my-2 flex justify-center items-center'>Salt: {meal.salt}</p> */}

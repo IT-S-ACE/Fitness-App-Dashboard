@@ -39,7 +39,7 @@ export const gridProductImage = (props) => (
     <img
       className="rounded-xl h-20 md:ml-3"
       // src={props.ProductImage}
-      src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${props.Product}`}
+      src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${props.Product}`}
       alt={props.ProductName}
     />
   </div>
@@ -77,7 +77,7 @@ const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
     <img
       className="rounded-full w-10 h-10"
-      src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${props.EmployeeImage}`}
+      src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${props.EmployeeImage}`}
       alt={props.Name}
     />
     <p>{props.Name}</p>

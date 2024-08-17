@@ -372,7 +372,7 @@ function Ecommerce() {
                     }}
                     className="text-2xl rounded-lg pr-4 hover:drop-shadow-xl"
                   >
-                    <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${item.image}`} alt="" className='h-12 w-12 flex items-start' />
+                    <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${item.image}`} alt="" className='h-12 w-12 flex items-start' />
                   </button>
                   <div>
                     <p className="text-md font-semibold">{item.category_name}</p>
@@ -430,7 +430,7 @@ function Ecommerce() {
                       }}
                       className="text-2xl rounded-lg pr-4 hover:drop-shadow-xl"
                     >
-                      <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${challenge.image}`} alt="" className='h-12 w-12 flex items-start' />
+                      <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${challenge.image}`} alt="" className='h-12 w-12 flex items-start' />
                     </button>
                     <div>
                       <p className="text-md font-semibold">{challenge.challenge_name}</p>
@@ -511,7 +511,7 @@ function Ecommerce() {
                 <img key={index} className="rounded-full w-8 h-8" src={item.image} alt="" />
               ))} */}
               {AllCoachs?.coach?.map((coach, index) => {
-                return <img key={index} className="rounded-full w-8 h-8" src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${coach.image}`} alt="Coach" />
+                return <img key={index} className="rounded-full w-8 h-8" src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${coach.image}`} alt="Coach" />
               })}
             </div>
           </div>

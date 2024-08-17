@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from 'js-cookie';
 
 const coachApi = axios.create({
-    baseURL: 'https://35c9-109-236-81-161.ngrok-free.app/api'
+    baseURL: 'https://ae3b-46-213-123-22.ngrok-free.app/api'
 })
 
 coachApi.interceptors.request.use(

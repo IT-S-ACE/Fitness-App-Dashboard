@@ -111,7 +111,7 @@ const CoachFirst = () => {
         className="bg-white w-96 ml-52 rounded-lg card-Background mt-10"
         >
           <div className="flex justify-center -translate-y-11">
-            <img src={`https://35c9-109-236-81-161.ngrok-free.app/Uploads/${coachInfo?.coach[0]?.image}`} alt="Coach Profile" className="rounded-full w-32 h-32 border-1 border-black" />
+            <img src={`https://ae3b-46-213-123-22.ngrok-free.app/Uploads/${coachInfo?.coach[0]?.image}`} alt="Coach Profile" className="rounded-full w-32 h-32 border-1 border-black" />
           </div>
           <p className="text-2xl">{coachInfo?.coach[0]?.name}</p>
           <p className="my-3">{coachInfo?.coach[0]?.bio}</p>
