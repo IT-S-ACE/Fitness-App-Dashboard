@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install --legacy--peer-deps`
+for downloading the (node_module)
+
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -17,8 +21,6 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 
-### npm install --legacy--peer-deps
-for downloading the (node_module)
 
 ### `npm start`
 enjoy the App .
