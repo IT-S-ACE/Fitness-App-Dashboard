@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query';
-import { PlanWithExercises } from '../../api/coachApi';
+import { PlanWithExercises } from '../../api/Coach/coachApi';
 import toast from 'react-hot-toast';
 
 export const useAllExercisePlan = (planID) => {

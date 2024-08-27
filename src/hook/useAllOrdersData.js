@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { GetAllOrders } from '../api/api'
+import { GetAllOrders } from '../api/Admin/api'
 
 export const useAllOrdersData = () => {
     return useQuery('all-orders', GetAllOrders, {

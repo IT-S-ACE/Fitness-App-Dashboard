@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQueryClient } from 'react-query';
-import { SalesByMonths } from '../api/api';
+import { SalesByMonths } from '../api/Admin/api';
 import toast from 'react-hot-toast';
 import { useStateContext } from '../contexts/ContextProvider';
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { GetAllChallenges } from '../api/api'
+import { GetAllChallenges } from '../api/Admin/api'
 
 export const useAllChallengeData = () => {
   return useQuery('all-challenge', GetAllChallenges, {

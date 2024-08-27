@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQueryClient } from 'react-query';
-import { sendTrainerNotification } from '../../api/coachApi';
+import { sendTrainerNotification } from '../../api/Coach/coachApi';
 import toast from 'react-hot-toast';
 
 export const useSendNotification = () => {

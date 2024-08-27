@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { DeleteExercise } from '../api/api';
+import { DeleteExercise } from '../api/Admin/api';
 import toast from 'react-hot-toast';
 
 export const useDeleteExercise = () => {

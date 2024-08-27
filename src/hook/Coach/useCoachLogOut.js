@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQueryClient } from 'react-query'
-import { CoachLogOut } from '../../api/coachApi';
+import { CoachLogOut } from '../../api/Coach/coachApi';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQueryClient } from 'react-query';
-import { AddNewPosters } from '../api/api';
+import { AddNewPosters } from '../api/Admin/api';
 import toast from 'react-hot-toast';
 
 export const useAddNewPoster = () => {

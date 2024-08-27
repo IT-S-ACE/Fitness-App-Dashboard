@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { GetAllCategory } from '../api/api'
+import { GetAllCategory } from '../api/Admin/api'
 
 export const useAllCategoryData = () => {
     return useQuery('all-category', GetAllCategory, {

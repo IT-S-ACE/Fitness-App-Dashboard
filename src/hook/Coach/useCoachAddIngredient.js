@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQueryClient } from 'react-query';
-import { CoachAddIngredient } from '../../api/coachApi';
+import { CoachAddIngredient } from '../../api/Coach/coachApi';
 import toast from 'react-hot-toast';
 
 export const useCoachAddIngredient = () => {

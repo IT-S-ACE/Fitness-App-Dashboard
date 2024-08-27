@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { GetAllMeals } from '../api/api'
+import { GetAllMeals } from '../api/Admin/api'
 
 export const useAllMealsData = () => {
   return useQuery('all-meals' , GetAllMeals,{

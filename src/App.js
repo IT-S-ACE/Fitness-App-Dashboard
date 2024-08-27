@@ -1,159 +1,39 @@
-// import React , {useEffect} from 'react';
-// import {BrowserRouter , Routes , Route } from 'react-router-dom';
-// import { FiSettings } from 'react-icons/fi';
-// import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
-// import {Navbar , Footer , Sidebar , ThemeSettings} from './components';
-
-// import {Login, Introduction ,Ecommerce , Orders , Calendar , Employees , Stacked ,
-// Pyramid , Customers , Kanban , Area , Bar , Pie , Financial ,
-// ColorPicker , ColorMapping , Editor, Line} from './pages'
-
-// import { useStateContext } from './contexts/ContextProvider';
-
-// import './App.css'
-// import './Login.css'
-// import './Introduction.css'
-
-// const App = () => {
-//   const {activeMenu} = useStateContext();
-//   // const activeMenu = false;
-//   return (
-    
-//     <div>
-//       <BrowserRouter>
-//       <div className='flex relative dark:bg-main-dark-bg'>
-//         <div className='fixed right-4 bottom-4' style={{ zIndex: '1000' }}>
-//           <TooltipComponent content="Settings" position='Top'> 
-//             <button type='button' 
-//             className="text-3xl p-3 
-//             hover:drop-shadow-xl 
-//             hover:bg-light-gray text-white" 
-//             style={{background:"blue" , borderRadius:'50%'}}>
-//               <FiSettings />
-//             </button> 
-//           </TooltipComponent>
-//         </div>
-//         {activeMenu ? (
-//           <div className='w-72 fixed  sidebar 
-//           dark:bg-secondary-dark-bg
-//           bg-light'>
-//             <Sidebar />
-//           </div> 
-//         ) : (
-//           <div className='w-0 
-//           dark: bg-secondary-dark-bg'>
-//             <Sidebar />
-//           </div>)}
-//           <div className={
-//             `dark:bg-main-bg bg-main-bg min-h-screen w-full 
-//             ${activeMenu ? '' :'flex-2'}`
-//           }>
-//             <div className='
-//             fixed md:static 
-//             bg-main-bg 
-//             dark:bg-main-dark-bg 
-//             navbar w-full'>
-//               <Navbar />
-//             </div>
-          
-//           <div>
-//             <Routes>
-//             {/* Login */}
-//             <Route path='/' element={<Login />} />
-//             {/* <Route path='/Login' element={<Login />} /> */}
-
-//             {/* Introduction */}
-//             <Route path='/introduction' element={<Introduction />}/>
-
-//               {/* Dashboard */}
-//               {/* <Route path='/' element={<Ecommerce/>} /> */}
-//               <Route path='/ecommerce' element={<Ecommerce/>} />
-
-//               {/* Pags */}
-//               <Route path='/orders' element={<Orders/>} />
-//               <Route path='/employees' element={<Employees/>} />
-//               <Route path='/customers' element={<Customers/>} />
-
-//               {/* Apps */}
-//               <Route path='/kanban' element={<Kanban/>} />
-//               <Route path='/editor' element={<Editor/>} />
-//               <Route path='/Calendar' element={<Calendar/>} />
-//               <Route path='/color-picker' element={<ColorPicker/>} />
-
-//               {/* Charts */}
-//               <Route path='/line' element={<Line/>} />
-//               <Route path='/area' element={<Area/>} />
-//               <Route path='/bar' element={<Bar/>} />
-//               <Route path='/pie' element={<Pie/>} />
-//               <Route path='/financial' element={<Financial/>} />
-//               <Route path='/color-mapping' element={<ColorMapping/>} />
-//               <Route path='/pyramid' element={<Pyramid/>} />
-//               <Route path='/stacked' element={<Stacked/>} />
-            
-//             </Routes>
-//           </div>
-//           {/* <Footer /> */}
-//           </div>
-//       </div>
-//       </BrowserRouter>
-//     </div>
-    
-//   )
-// }
-
-// export default App;
-
 
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import Sidebar from './components/SideBar/Sidebar'
+import Navbar from './components/NavBar/Navbar'
 
-import { Navbar, Sidebar, ThemeSettings } from './components';
-
-import {
-  Login,
-  Introduction,
-  Ecommerce,
-  Orders,
-  Calendar,
-  Employees,
-  Stacked,
-  Pyramid,
-  Customers,
-  Kanban,
-  Area,
-  Bar,
-  Pie,
-  Financial,
-  ColorPicker,
-  ColorMapping,
-  Editor,
-  Line,
-  Meal,
-  CoachMain
-} from './pages';
 
 import { useStateContext } from './contexts/ContextProvider';
 
 import './App.css';
 import './Login.css';
 import './inputData.css'
-import './assets/upload.css'
-import './assets/table.css'
-import './assets/Modal.css'
-import './assets/FormUI.css'
-import './assets/DeleteButton.css'
-import './assets/DropDown.css'
-import './assets/card.css'
-import './assets/BillsCard.css'
-import './assets/ProductCard.css'
-import ExercisesPlan from './components/Coach/ExercisesPlan';
-import Exercises from './pages/Exercises';
-import Bills from './pages/Bills';
-// import './assets/footer.css'
-// import './Introduction.css'
+import './assets/Css/upload.css'
+import './assets/Css/table.css'
+import './assets/Css/Modal.css'
+import './assets/Css/FormUI.css'
+import './assets/Css/DeleteButton.css'
+import './assets/Css/DropDown.css'
+import './assets/Css/card.css'
+import './assets/Css/BillsCard.css'
+import './assets/Css/ProductCard.css'
+import ExercisesPlan from './components/Coach/Sections/Plans/ExercisesPlan.jsx';
+import Exercises from './pages/Exercise/Exercises.jsx';
+import Bills from './pages/Bills/Bills.jsx';
+import Login from './pages/Login/Login.jsx';
+import CoachMain from './pages/CoachPage/CoachMain.jsx';
+import Meal from './pages/Meals/Meal.jsx';
+import Orders from './pages/Products/Orders.jsx';
+import Employees from './pages/Coachs/Employees.jsx';
+import Kanban from './pages/Articles/Kanban.jsx';
+import Calendar from './pages/Calender/Calendar.jsx';
+import Customers from './pages/Orders/Customers.jsx';
+import Ecommerce from './pages/DashBoard/Ecommerce.jsx';
+import Introduction from './pages/Introduction/Introduction.jsx';
 
 const App = () => {
   const { activeMenu } = useStateContext();
@@ -178,60 +58,10 @@ const App = () => {
     </div>
   );
 
-  function LoginPage() {
-    return (
-      <div className="flex relative dark:bg-main-dark-bg">
-        <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
-          <TooltipComponent content="Settings" position="Top">
-            <button
-              type="button"
-              className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-              style={{ background: 'blue', borderRadius: '50%' }}
-            >
-              <FiSettings />
-            </button>
-          </TooltipComponent>
-        </div>
-        {activeMenu ? (
-          <div className="w-72 fixed  sidebar dark:bg-secondary-dark-bg bg-light">
-            <Sidebar />
-          </div>
-        ) : (
-          <div className="w-0 dark: bg-secondary-dark-bg">
-            <Sidebar />
-          </div>
-        )}
-        <div
-          className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
-            activeMenu ? '' : 'flex-2'
-          }`}
-        >
-          <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-            <Navbar />
-          </div>
-
-          <div className="w-full">
-            <Login />
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   function ProtectedPages() {
     return (
       <div className=" flex relative dark:bg-main-dark-bg ml-10">
-        {/* <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
-          <TooltipComponent content="Settings" position="Top">
-            <button
-              type="button"
-              className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-              style={{ background: 'blue', borderRadius: '50%' }}
-            >
-              <FiSettings />
-            </button>
-          </TooltipComponent>
-        </div> */}
           
           <div className='bg-black -ml-10'>
           <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg mt-5 ">
@@ -264,19 +94,8 @@ const App = () => {
 
               {/* Apps */}
               <Route path="/kanban" element={<Kanban />} />
-              <Route path="/editor" element={<Editor />} />
               <Route path="/calendar" element={<Calendar />} />
-              <Route path="/color-picker" element={<ColorPicker />} />
 
-              {/* Charts */}
-              <Route path="/line" element={<Line />} />
-              <Route path="/area" element={<Area />} />
-              <Route path="/bar" element={<Bar />} />
-              <Route path="/pie" element={<Pie />} />
-              <Route path="/financial" element={<Financial />} />
-              <Route path="/color-mapping" element={<ColorMapping />} />
-              <Route path="/pyramid" element={<Pyramid />} />
-              <Route path="/stacked" element={<Stacked />} />
             </Routes>
           </div>
         </div>

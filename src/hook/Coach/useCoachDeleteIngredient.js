@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQueryClient } from 'react-query';
-import { CoachDeleteIngredient } from '../../api/coachApi';
+import { CoachDeleteIngredient } from '../../api/Coach/coachApi';
 import toast from 'react-hot-toast';
 
 export const useCoachDeleteIngredient = () => {

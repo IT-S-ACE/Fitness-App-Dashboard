@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { GetAllRefunds } from '../api/api'
+import { GetAllRefunds } from '../api/Admin/api'
 
 export const useAllRefundsData = () => {
     return useQuery('all-refunds' , GetAllRefunds,{

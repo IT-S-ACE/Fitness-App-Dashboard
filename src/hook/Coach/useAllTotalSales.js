@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { GetTotalSells } from '../../api/coachApi'
+import { GetTotalSells } from '../../api/Coach/coachApi'
 
 export const useAllTotalSales = () => {
     return useQuery('total-sells', GetTotalSells, {

@@ -3,9 +3,7 @@
 *{
   letter-spacing: normal !important;
 }
-/* .sidebar {
-    box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
-} */
+
 .nav-item,
 .navbar {
     z-index: 10000;
@@ -63,30 +61,17 @@
     --expand-button: #353E47;
     --logout: #FA7575;
   }
-/*   
-  body {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 16px;
-    padding: 16px;
-    height: 100%;
-  } */
+
   
   html {
     height: 100%;
   }
-/*   
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-   */
+
   .sidebar {
     position: sticky;
     top: 0;
     left: 0;
     max-height: 44.75rem;
-    /* height: 100%; */
     padding: 1rem 0px;
     border-radius: 1rem;
     max-width: 18rem;
@@ -110,7 +95,6 @@
     display: none;
   }
   
-  /*? sidebar top */
   
   .sidebar-top-wrapper {
     display: flex;

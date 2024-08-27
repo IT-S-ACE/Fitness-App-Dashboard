@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQueryClient } from 'react-query';
-import { DeleteProduct } from '../api/api';
+import { DeleteProduct } from '../api/Admin/api';
 import toast from 'react-hot-toast';
 
 export const useDeleteProduct = () => {

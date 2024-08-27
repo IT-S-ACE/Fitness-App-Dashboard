@@ -1,9 +1,9 @@
 // import React from 'react'
 // import { useQuery } from 'react-query'
-// import { GetSetRecived } from '../api/api'
+// import { GetSetRecived } from '../api/Admin/api'
 
 import { useMutation, useQueryClient } from "react-query";
-import { GetSetRecived } from "../api/api";
+import { GetSetRecived } from "../api/Admin/api";
 
 // export const useSetRecived = (orederID) => {
 //     return useQuery(

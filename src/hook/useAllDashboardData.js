@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { GetAllDashboard } from '../api/api'
+import { GetAllDashboard } from '../api/Admin/api'
 
 export const useAllDashboardData = () => {
     return useQuery('all-dashboard' , GetAllDashboard,{

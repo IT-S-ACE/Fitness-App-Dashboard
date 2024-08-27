@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMutation, useQueryClient } from 'react-query';
-import { AddNewExercise } from '../api/api';
+import { AddNewExercise } from '../api/Admin/api';
 import toast from 'react-hot-toast';
 
 export const useAddNewExercise = () => {

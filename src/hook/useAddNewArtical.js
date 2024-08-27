@@ -1,6 +1,6 @@
 import { useMutation , useQueryClient } from "react-query";
 import toast from "react-hot-toast";
-import { AddNewArtical } from "../api/api";
+import { AddNewArtical } from "../api/Admin/api";
 
 
 

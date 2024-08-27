@@ -1,5 +1,5 @@
 import { useMutation , useQueryClient } from "react-query";
-import { AddNewCoach } from "../api/api";
+import { AddNewCoach } from "../api/Admin/api";
 import toast from 'react-hot-toast';
 
 export const useAddNewCoachData = () => {

@@ -62,7 +62,7 @@ module.exports = {
         backgroundImage: {
           'hero-pattern':
             "url('https://d3h9ln6psucegz.cloudfront.net/wp-content/uploads/2016/07/The-Viking-Row-Workout.jpg')",
-            'dashboard-1' : "url('/src/assets/image-1.png')"
+            'dashboard-1' : "url('/src/assets/Random-Image/image-1.png')"
         },
         zIndex: {
           1: '1',

@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast';
 import { useMutation, useQueryClient } from 'react-query';
-import { AddNewExerciseToType } from '../api/api';
+import { AddNewExerciseToType } from '../api/Admin/api';
 
 export const useAddNewExerciseToType = () => {
     const queryClient = useQueryClient()

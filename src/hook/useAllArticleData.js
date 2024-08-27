@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { GetAllArticles } from '../api/api'
+import { GetAllArticles } from '../api/Admin/api'
 
 export const useAllArticleData = () => {
   return useQuery('all-article' , GetAllArticles,{

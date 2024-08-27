@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast';
 import { useMutation, useQueryClient } from 'react-query';
-import { DeleteMeal } from '../api/api';
+import { DeleteMeal } from '../api/Admin/api';
 
 export const useDeleteMeal = () => {
     const queryClient = useQueryClient();

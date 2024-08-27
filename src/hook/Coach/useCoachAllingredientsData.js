@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import { CoachGetAllIngredients } from '../../api/coachApi'
+import { CoachGetAllIngredients } from '../../api/Coach/coachApi'
 
 export const useCoachAllingredientsData = () => {
     return useQuery('all-coach-ingredients' , CoachGetAllIngredients,{

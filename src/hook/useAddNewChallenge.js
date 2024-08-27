@@ -1,7 +1,7 @@
 import React from 'react'
 import toast from 'react-hot-toast';
 import { useMutation, useQueryClient } from 'react-query';
-import { AddNewChallenge } from '../api/api';
+import { AddNewChallenge } from '../api/Admin/api';
 
 export const useAddNewChallenge = () => {
     const queryClient = useQueryClient()
